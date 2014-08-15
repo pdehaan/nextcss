@@ -1,0 +1,93 @@
+/*! nextcss/base
+ * Somewhat inspired by (and includes parts of):
+ *   http://typeplate.com
+ *   http://purecss.io/base/
+ *   http://getbootstrap.com
+ *   http://getuikit.com/docs/base.html
+ */
+
+@custom-media --hidpi only screen and (-webkit-min-device-pixel-ratio: 1.5),
+	only screen and (min--moz-device-pixel-ratio: 1.5),
+	only screen and (-o-min-device-pixel-ratio: 1.5/1),
+	only screen and (min-resolution: 144dpi),
+	only screen and (min-resolution: 1.5dppx);
+
+/*! Micro Clearfix http://nicolasgallagher.com/micro-clearfix-hack/ */
+%clearfix:before, %clearfix:after {
+	content: " ";
+	display: table;
+}
+%clearfix:after {
+	clear: both;
+}
+
+/* Only for screenreaders */
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0px;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0px,0px,0px,0px);
+	border: 0px none;
+}
+
+:root {
+	--tera: 6.5rem;
+	--giga: 5rem;
+	--mega: 4rem;
+	--alpha: 3.3333rem;
+	--beta: 2.6667rem;
+	--gamma: 2rem;
+	--delta: 1.3333rem;
+	--epsilon: 1.1667rem;
+	--zeta: 1rem;
+}
+
+%small-caps {
+	font-variant: small-caps;
+	text-transform: uppercase;
+}
+
+/* Yes this is 2014. Who still thinks the weird box model and overflowing images by default are good ideas?! */
+* { box-sizing: border-box; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+
+html {
+	hyphens: auto;
+	background: var(--white);
+	color: var(--black);
+}
+
+abbr, acronym, blockquote, code, dir, kbd, listing, plaintext, q, samp, tt, var, xmp, input, button {
+	hyphens: none;
+}
+
+abbr {
+	inherit: %small-caps;
+	border-bottom: 1px dashed;
+}
+abbr:hover {
+	cursor: help;
+}
+
+ul {
+	padding-left: 0;
+	list-style-type: square;
+	list-style-position: inside;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-rendering: optimizeLegibility; /* voodoo to enable ligatures and kerning */
+	line-height: 1; /* this fixes huge spaces when a heading wraps onto two lines */
+	margin-bottom: 0;
+}
+
+h1 { font-size: var(--alpha); }
+h2 { font-size: var(--beta); }
+h3 { font-size: var(--gamma); }
+h4 { font-size: var(--delta); }
+h5 { font-size: var(--epsilon); }
+h6 { font-size: var(--zeta); }

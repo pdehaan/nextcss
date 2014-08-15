@@ -1,0 +1,90 @@
+@import "nextcss";
+
+body {
+	width: 95%;
+	margin: 0 auto;
+	font-family: Nunito, Avenir, sans-serif;
+}
+pre, code {
+	font-family: Inconsolata, monospace !important;
+}
+h1, h2, h3 {
+	font-family: Coda, monospace;
+	font-weight: 400;
+}
+
+a { color: color(var(--red) shade(10%)); }
+a:hover, a:focus { color: color(var(--red) tint(15%)); }
+
+:root {
+	--success: var(--green);
+}
+.success-thingy {
+	background: linear-gradient(to bottom, color(var(--success) tint(20%)), color(var(--success) shade(20%)));
+	color: color(white shade(10%) alpha(0.5));
+	font-size: 2em;
+	letter-spacing: 0.4em;
+	padding: 1em;
+	text-align: center;
+}
+
+.button-pure {
+	inherit: %button-base;
+	button: bgcolor(var(--silver)) fgcolor(var(--black)) rounded;
+}
+.button-pure:hover, .button-pure:focus {
+	button: bgcolor(var(--silver)) fgcolor(var(--black)) shade-gradient;
+}
+
+.button-success {
+	inherit: %button-base;
+	button: bgcolor(var(--green)) fgcolor(var(--white)) gradient;
+}
+.button-success:hover, .button-success:focus {
+	button: bgcolor(var(--green) tint(10%)) fgcolor(var(--white)) gradient bordered;
+}
+
+.button-yolo {
+	inherit: %button-base;
+	button: bgcolor(var(--purple)) circle(5em) gradient bordered;
+}
+.button-yolo:hover, .button-yolo:focus {
+	button: bgcolor(var(--yellow)) gradient bordered;
+}
+
+.button-yolo2 {
+	inherit: %button-base;
+	button: bgcolor(var(--white)) fgcolor(var(--orange)) circle(5em) borderonly;
+}
+.button-yolo2:hover, .button-yolo2:focus {
+	button: bgcolor(var(--white)) fgcolor(var(--orange) shade(15%)) borderonly;
+}
+
+.button-borderonly {
+	inherit: %button-base;
+	button: bgcolor(var(--white)) fgcolor(var(--fuchsia)) borderonly pill;
+}
+.button-borderonly:hover, .button-borderonly:focus {
+	button: bgcolor(var(--white)) fgcolor(var(--fuchsia) tint(30%)) borderonly;
+}
+.button-borderonly2 {
+	inherit: %button-base;
+	button: bgcolor(var(--white)) fgcolor(var(--teal)) borderonly;
+}
+.button-borderonly2:hover, .button-borderonly2:focus {
+	button: bgcolor(var(--white)) fgcolor(var(--teal) shade(30%)) borderonly;
+}
+
+.button-close {
+	inherit: %button-base;
+	button: bgcolor(transparent) fgcolor(inherit) circle(1.2em);
+}
+
+.alert-success {
+	inherit: %alert-base;
+	alert: color(var(--green));
+}
+.alert-error {
+	inherit: %alert-base;
+	alert: color(var(--red));
+}

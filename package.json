@@ -1,0 +1,37 @@
+{
+	"name": "nextcss",
+	"description": "A CSS framework from the future, based on Rework/Myth",
+	"version": "0.1.0",
+	"author": "Greg V <floatboth@me.com>",
+	"engines": {
+		"node": "*"
+	},
+	"main": "lib/index",
+	"style": "index",
+	"keywords": [
+		"css", "rework", "style", "stylesheets", "myth"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/myfreeweb/nextcss.git"
+	},
+	"license": [{
+		"type": "Apache-2.0",
+		"url": "https://github.com/myfreeweb/nextcss/blob/master/COPYING"
+	}],
+	"bugs": {
+		"url": "https://github.com/myfreeweb/nextcss/issues"
+	},
+	"dependencies": {
+		"lodash": "2.4.x",
+		"balanced-match": "0.1.x",
+		"myth": "1.1.x",
+		"normalize.css": "3.0.x",
+		"rework-npm": "1.0.x",
+		"rework-inherit": "0.2.x",
+		"rework-clone": "0.1.x",
+		"rework-plugin-ease": "1.0.x",
+		"rework-plugin-references": "1.0.x",
+		"rework-plugin-mixin": "1.0.x"
+	}
+}

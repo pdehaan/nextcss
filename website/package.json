@@ -1,0 +1,19 @@
+{
+	"name": "nextcss-website",
+	"version": "0.0.0",
+	"private": true,
+	"author": "Greg V <floatboth@me.com>",
+	"engines": {
+		"node": "*"
+	},
+	"devDependencies": {
+		"broccoli": "",
+		"broccoli-rework": "",
+		"broccoli-autoprefixer": "",
+		"broccoli-merge-trees": "",
+		"broccoli-source-map": "",
+		"broccoli-file-mover": "",
+		"sweet.js": "",
+		"sweetbuild": ""
+	}
+}
