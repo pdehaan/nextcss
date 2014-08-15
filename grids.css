@@ -1,0 +1,25 @@
+/*! nextcss/grids
+ * Based on:
+ *   http://philipwalton.github.io/solved-by-flexbox/demos/grids/
+ */
+
+%grid {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+%grid > * {
+	flex: 1 100%;
+}
+
+%grid-flex > * {
+	flex: 1 1 0%;
+}
+
+%grid-flex > *:first-child {
+	padding-left: 0;
+}
+
+%grid-flex > *:last-child {
+	padding-right: 0;
+}

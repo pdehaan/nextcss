@@ -140,8 +140,63 @@
 </section>
 
 <section>
-	<h3>Buttons</h3>
+	<h3>Grids</h3>
+	<p>
+		Flexbox-based grids that keep markup semantic (if you can make up better names than <code>demo-two-of-four</code>, of course &mdash; something like <code>long-product</code> would be much better).
+		Infinitely nestable.
+	</p>
+	<p>
+		This module is based on <a href="http://philipwalton.github.io/solved-by-flexbox/demos/grids/">Solved by Flexbox</a>.
+	</p>
+	<pre><code class="language-css">.grid-example {
+	inherit: %grid;
+	margin: 1em 0;
+}
+/* You're in control of the breakpoint! */
+@media screen and (min-width: 600px) {
+	.grid-example {
+		inherit: %grid-flex;
+	}
+	/* Gutters */
+	.grid-example > * { padding: 0 0.6em; }
+	/* Spans (be more creative with the class name pls) */
+	.grid-example > .demo-two-of-three { flex: 0 0 66.66666%; }
+	.grid-example > .demo-two-of-four { flex: 0 0 50%; }
+}</code></pre>
+	<pre><code class="language-markup">&lt;div class="grid-example"&gt;
+	&lt;div class="demo-two-of-four"&gt;
+		&lt;div class="grid-demo-content"&gt;2/4&lt;/div&gt;
+		&lt;div class="grid-example"&gt;
+			&lt;div&gt;&lt;div class="grid-demo-content"&gt;nested&lt;br&gt;1/2&lt;/div&gt;&lt;/div&gt;
+			&lt;div&gt;&lt;div class="grid-demo-content"&gt;nested&lt;br&gt;1/2&lt;/div&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div&gt;&lt;div class="grid-demo-content"&gt;&lt;br&gt;1/4&lt;br&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;div class="grid-demo-content"&gt;&lt;br&gt;1/4&lt;br&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+	<div class="grid-example">
+		<div><div class="grid-demo-content">1/2</div></div>
+		<div><div class="grid-demo-content">1/2</div></div>
+	</div>
+	<div class="grid-example">
+		<div class="demo-two-of-three"><div class="grid-demo-content">2/3</div></div>
+		<div><div class="grid-demo-content">1/3</div></div>
+	</div>
+	<div class="grid-example">
+		<div class="demo-two-of-four">
+			<div class="grid-demo-content">2/4</div>
+			<div class="grid-example">
+				<div><div class="grid-demo-content">nested<br>1/2</div></div>
+				<div><div class="grid-demo-content">nested<br>1/2</div></div>
+			</div>
+		</div>
+		<div><div class="grid-demo-content"><br>1/4<br><br></div></div>
+		<div><div class="grid-demo-content"><br>1/4<br><br></div></div>
+	</div>
+</section>
 
+<section>
+	<h3>Buttons</h3>
 	<p>
 		Buttons are composed from:
 	</p>

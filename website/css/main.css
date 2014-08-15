@@ -42,6 +42,34 @@ a:hover, a:focus { color: color(var(--red) tint(15%)); }
 	flex: 1;
 }
 
+.grid-demo-content {
+	background: color(var(--yellow) tint(50%) alpha(0.9));
+	text-align: center;
+	padding: 1em;
+	font-size: var(--delta);
+}
+.grid-example {
+	inherit: %grid;
+	margin: 1em 0;
+}
+.grid-example > * {
+	background: color(var(--purple) tint(60%) alpha(0.4));
+}
+@media screen and (min-width: 600px) {
+	.grid-example {
+		inherit: %grid-flex;
+	}
+	.grid-example > * {
+		padding: 0 0.6em;
+	}
+	.grid-example > .demo-two-of-three {
+		flex: 0 0 66.66666%;
+	}
+	.grid-example > .demo-two-of-four {
+		flex: 0 0 50%;
+	}
+}
+
 .button-pure {
 	inherit: %button-base;
 	button: bgcolor(var(--silver)) fgcolor(var(--black)) rounded;
