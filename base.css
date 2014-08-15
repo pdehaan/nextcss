@@ -59,6 +59,7 @@ html {
 	hyphens: auto;
 	background: var(--white);
 	color: var(--black);
+	line-height: 1.65;
 }
 
 abbr, acronym, blockquote, code, dir, kbd, listing, plaintext, q, samp, tt, var, xmp, input, button {

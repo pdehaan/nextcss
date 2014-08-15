@@ -16,16 +16,30 @@ h1, h2, h3 {
 a { color: color(var(--red) shade(10%)); }
 a:hover, a:focus { color: color(var(--red) tint(15%)); }
 
+.thingies {
+	display: flex;
+}
 :root {
 	--success: var(--green);
+	--action: var(--blue);
+	--failure: var(--red);
 }
 .success-thingy {
 	background: linear-gradient(to bottom, color(var(--success) tint(20%)), color(var(--success) shade(20%)));
+}
+.action-thingy {
+	background: linear-gradient(to bottom, color(var(--action) tint(20%)), color(var(--action) shade(20%)));
+}
+.failure-thingy {
+	background: linear-gradient(to bottom, color(var(--failure) tint(20%)), color(var(--failure) shade(20%)));
+}
+.thingy {
 	color: color(white shade(10%) alpha(0.5));
 	font-size: 2em;
 	letter-spacing: 0.4em;
 	padding: 1em;
 	text-align: center;
+	flex: 1;
 }
 
 .button-pure {
@@ -41,7 +55,7 @@ a:hover, a:focus { color: color(var(--red) tint(15%)); }
 	button: bgcolor(var(--green)) fgcolor(var(--white)) gradient;
 }
 .button-success:hover, .button-success:focus {
-	button: bgcolor(var(--green) tint(10%)) fgcolor(var(--white)) gradient bordered;
+	button: bgcolor(var(--green) shade(20%)) fgcolor(var(--white)) gradient bordered;
 }
 
 .button-yolo {
@@ -65,7 +79,7 @@ a:hover, a:focus { color: color(var(--red) tint(15%)); }
 	button: bgcolor(var(--white)) fgcolor(var(--fuchsia)) borderonly pill;
 }
 .button-borderonly:hover, .button-borderonly:focus {
-	button: bgcolor(var(--white)) fgcolor(var(--fuchsia) tint(30%)) borderonly;
+	button: bgcolor(var(--white)) fgcolor(var(--fuchsia) shade(25%)) borderonly;
 }
 .button-borderonly2 {
 	inherit: %button-base;
@@ -75,16 +89,58 @@ a:hover, a:focus { color: color(var(--red) tint(15%)); }
 	button: bgcolor(var(--white)) fgcolor(var(--teal) shade(30%)) borderonly;
 }
 
+.small-forms form { margin: 1em; }
+@media screen and (min-width: 680px) {
+	.small-forms {
+		display: flex;
+		justify-content: center;
+	}
+}
+.form-signup {
+	inherit: %form-grouped;
+	max-width: 320px;
+}
+.form-signup input:focus {
+	outline: none;
+	border-color: var(--green);
+	color: color(var(--green) shade(40%));
+}
+.form-signup input:focus:invalid {
+	border-color: var(--red);
+	color: color(var(--red) shade(40%));
+}
+
+.form-login {
+	inherit: %form-grouped;
+	max-width: 320px;
+}
+.form-login input {
+	border-width: 2px;
+	border-color: var(--fuchsia);
+}
+.form-login input:focus {
+	outline: none;
+	border-color: color(var(--fuchsia) shade(25%));
+}
+.form-login input, .form-login button {
+	transition: all 0.5s ease-in-quad;
+}
+
 .button-close {
 	inherit: %button-base;
 	button: bgcolor(transparent) fgcolor(inherit) circle(1.2em);
 }
-
 .alert-success {
 	inherit: %alert-base;
 	alert: color(var(--green));
+	border-width: 0;
 }
 .alert-error {
 	inherit: %alert-base;
 	alert: color(var(--red));
+	border-width: 2px;
+}
+.alert-info {
+	inherit: %alert-base;
+	alert: color(var(--yellow));
 }

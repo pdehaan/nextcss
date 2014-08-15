@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>nextcss</title>
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Inconsolata|Nunito:300,700|Coda">
 <link rel="stylesheet" href="prism.css">
@@ -13,6 +14,7 @@
 	<h2>Introduction</h2>
 	<p>
 		nextcss is a <abbr title="Cascading Style Sheets">CSS</abbr> framework from the future.
+		Your markup stays clean and semantic and it takes care of awesome responsive design.
 	</p>
 	<p>
 		It is powered by <a href="https://github.com/reworkcss/rework">Rework</a>, a JavaScript library for stylesheet manipulation.
@@ -24,6 +26,7 @@
 	</p>
 	<p>
 		nextcss is only tested on latest versions of popular browsers.
+		No IE8-9 hacks.
 		Live in the future, where everything is <a href="http://philipwalton.github.io/solved-by-flexbox/">solved by flexbox</a>.
 	</p>
 </section>
@@ -64,13 +67,35 @@
 	</p>
 	<p>
 		And nextcss tries not to be opinionated as well.
-		There are almost no class names, only placeholders and mixins.
+		There are almost zero class names, only placeholders and mixins.
+		Nothing is inside media queries, use whatever breakpoints you want.
 	</p>
 </section>
 
 <section>
+	<h2>Usage</h2>
+	<h3>Base</h3>
+	<p>
+		nextcss automatically includes <a href="http://necolas.github.io/normalize.css/">normalize.css</a> v3.
+		And then a little more defaults, some from <a href="http://typeplate.com">typeplate</a> and some from me.
+	</p>
+	<p>
+		There's the <code>.sr-only</code> class from <a href="http://getbootstrap.com">Bootstrap</a> which is for screenreader-only text.
+		Like the opposite of <code>aria-hidden="true"</code>.
+	</p>
+	<p>
+		The <a href="http://nicolasgallagher.com/micro-clearfix-hack/">Micro Clearfix</a> is available as a <a href="https://github.com/reworkcss/rework-inherit">placeholder</a>: <code>%clearfix</code>.
+		You won't need it often though, because <a href="http://css-tricks.com/snippets/css/a-guide-to-flexbox/">flexbox is a thing now</a>.
+	</p>
+	<p>
+		nextcss also defines a <code>--hidpi</code> <a href="https://github.com/reworkcss/rework-custom-media">custom media query</a> for, you guessed it, high-DPI screens.
+		You should avoid using this one too.
+		I recommend <a href="http://filamentgroup.com/lab/compressive-images.html">compressive images</a> for photos and vector graphics (SVG, fonts) for everything else.
+	</p>
+</section>
+<section>
 	<a name="a-common-pattern"></a>
-	<h2>A common pattern</h2>
+	<h3>A common pattern</h3>
 	<p>
 		In nextcss, you'll often have to write code like this:
 	</p>
@@ -87,7 +112,7 @@
 </section>
 
 <section>
-	<h2>Colors</h2>
+	<h3>Colors</h3>
 	<p>
 		The &ldquo;new default&rdquo; <a href="http://clrs.cc">clrs.cc</a> palette is available as <a href="https://github.com/reworkcss/rework-vars">variables</a>.
 		The <a href="https://github.com/reworkcss/rework-plugin-colors">color()</a> function is available for color manipulation.
@@ -98,22 +123,24 @@
 
 	<pre><code class="language-css">:root {
 	--success: var(--green);
+	--action: var(--blue);
+	--failure: var(--red);
 }
 .success-thingy {
 	background: linear-gradient(to bottom, color(var(--success) tint(20%)), color(var(--success) shade(20%)));
-	color: color(white shade(10%) alpha(0.5));
-	font-size: 2em;
-	letter-spacing: 0.4em;
-	padding: 1em;
-	text-align: center;
+}
+.thingy {
+	color: color(white shade(10%) alpha(0.5)); /* ... */
 }</code></pre>
-	<div class="success-thingy">
-		Success!
+	<div class="thingies">
+		<div class="thingy failure-thingy">failure</div>
+		<div class="thingy success-thingy">success</div>
+		<div class="thingy action-thingy">action</div>
 	</div>
 </section>
 
 <section>
-	<h2>Buttons</h2>
+	<h3>Buttons</h3>
 
 	<p>
 		Buttons are composed from:
@@ -125,6 +152,7 @@
 	</ul>
 	<p>
 		You can combine styles where it makes sense, like <em>gradient bordered</em>.
+		You should not repeat the shape in the hover/focus style.
 	</p>
 	<p>
 		This module has been largely inspired by <a href="http://alexwolfe.github.io/Buttons/">Unicorn UI Buttons</a> and <a href="http://purecss.io/buttons/">Pure buttons</a>.
@@ -148,7 +176,7 @@
 	button: bgcolor(var(--green)) fgcolor(var(--white)) gradient;
 }
 .button-success:hover, .button-success:focus {
-	button: bgcolor(var(--green) tint(10%)) fgcolor(var(--white)) gradient bordered;
+	button: bgcolor(var(--green) shade(20%)) fgcolor(var(--white)) gradient bordered;
 }</code></pre>
 	<p>
 		<a href="javascript:void(0)" class="button-success">a.button-success</a>
@@ -161,7 +189,7 @@
 	button: bgcolor(var(--white)) fgcolor(var(--fuchsia)) borderonly pill;
 }
 .button-borderonly:hover, .button-borderonly:focus {
-	button: bgcolor(var(--white)) fgcolor(var(--fuchsia) tint(30%)) borderonly;
+	button: bgcolor(var(--white)) fgcolor(var(--fuchsia) shade(25%)) borderonly;
 }</code></pre>
 	<p>
 		<button class="button-borderonly">pill borderonly button</button>
@@ -182,19 +210,70 @@
 		<button class="button-yolo">YOLO</button>
 		<button class="button-yolo2">YOLO</button>
 	</p>
-
 </section>
 
 <section>
-	<h2>Alerts</h2>
+	<h3>Forms</h3>
+	<pre><code class="language-css">.form-signup {
+	inherit: %form-grouped;
+	max-width: 320px; /* for demo purposes */
+}
+.form-signup input:focus {
+	outline: none;
+	border-color: var(--green);
+	color: color(var(--green) shade(40%));
+}
+.form-signup input:focus:invalid {
+	border-color: var(--red);
+	color: color(var(--red) shade(40%));
+}</code></pre>
+	<pre><code class="language-markup">&lt;form class="form-signup"&gt;
+	&lt;fieldset&gt;
+		&lt;input type="text" placeholder="Username" required&gt;
+		&lt;input type="email" placeholder="Email" required&gt;
+		&lt;input type="text" placeholder="Disabled input" disabled&gt;
+	&lt;/fieldset&gt;
+	&lt;fieldset&gt;
+		&lt;input type="password" placeholder="Password" required&gt;
+		&lt;input type="password" placeholder="Confirm password" required&gt;
+	&lt;/fieldset&gt;
+	&lt;button class="button-success"&gt;Sign up!&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+	<div class="small-forms">
+		<form class="form-signup">
+			<fieldset>
+				<input type="text" placeholder="Username" required>
+				<input type="email" placeholder="Email" required>
+				<input type="text" placeholder="Disabled input" disabled>
+			</fieldset>
+			<fieldset>
+				<input type="password" placeholder="Password" required>
+				<input type="password" placeholder="Confirm password" required>
+			</fieldset>
+			<button class="button-success">Sign up!</button>
+		</form>
+		<form class="form-login">
+			<fieldset>
+				<input type="text" placeholder="Username" required>
+				<input type="password" placeholder="Password" required>
+			</fieldset>
+			<button class="button-borderonly">Log in</button>
+		</form>
+	</div>
+</div>
+</section>
+
+<section>
+	<h3>Alerts</h3>
 	<p>
 		Alerts are created from a single color.
 		Use the clrs palette or a similarly not-too-dark-not-too-bright color.
-		Or do the <code>background</code>/<code>color</code>/<code>border-color</code> yourself (see <a href="#a-common-pattern">A common pattern</a>)
+		Or do the <code>background</code>/<code>color</code>/<code>border-color</code> yourself (see <a href="#a-common-pattern">A common pattern</a>).
 	</p>
 	<pre><code class="language-css">.alert-success {
 	inherit: %alert-base;
 	alert: color(var(--green));
+	border-width: 0;
 }
 .button-close {
 	inherit: %button-base;
@@ -207,15 +286,18 @@
 		&lt;span class="sr-only"&gt;Close&lt;/span&gt;
 	&lt;/button&gt;
 &lt;/div&gt;</code></pre>
+	<div class="alert-info">
+		Welcome back!
+	</div>
+	<div class="alert-error">
+		<strong>Failed</strong> to update the page. <a href="javascript:void(0)">Retry?</a>
+	</div>
 	<div class="alert-success">
 		<strong>Successfully saved</strong> your profile.
 		<button class="button-close">
 			<span aria-hidden="true">&times;</span>
 			<span class="sr-only">Close</span>
 		</button>
-	</div>
-	<div class="alert-error">
-		<strong>Failed</strong> to update the page. <a href="javascript:void(0)">Retry?</a>
 	</div>
 </section>
 
