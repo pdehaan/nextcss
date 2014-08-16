@@ -21,6 +21,7 @@ thead tr {
 thead th {
 	text-align: left;
 	padding-top: 0.8em;
+	border-bottom: color(var(--gray) alpha(0.09)) solid 2px;
 }
 
 %table-collapsed, %table-collapsed thead, %table-collapsed tbody, %table-collapsed th, %table-collapsed td, %table-collapsed tr {
