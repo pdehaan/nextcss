@@ -49,7 +49,7 @@
 	<pre><code class="language-javascript">var css = 'css'
 	-> rework({
 		compress: true,  // The result is minified...
-		sourcemap: true, // ...but it's all good in devtools, thanks to source maps!
+		sourcemap: true, // ...but it's fine in devtools!
 		use: function(r) {
 			r.use(require('nextcss')({root: './css'}));
 		}
@@ -57,7 +57,9 @@
 	-> autoprefixer
 	-> file_mover({
 		files: {
-			'main.css': 'bundle.css' // Browsers are confused when the original and compiled files have the same name
+			'main.css': 'bundle.css'
+			// Browsers are confused when the original
+			// and compiled files have the same name
 		}
 	})
 	-> source_map.extract;</code></pre>
@@ -127,7 +129,9 @@
 	--failure: var(--red);
 }
 .success-thingy {
-	background: linear-gradient(to bottom, color(var(--success) tint(20%)), color(var(--success) shade(20%)));
+	background: linear-gradient(to bottom,
+		color(var(--success) tint(20%)),
+		color(var(--success) shade(20%)));
 }
 .thingy {
 	color: color(white shade(10%) alpha(0.5)); /* ... */
@@ -152,7 +156,8 @@
 	inherit: %grid;
 	margin: 1em 0;
 }
-/* You're in control of the breakpoint! */
+/* You're in control of the breakpoint!
+   Tip: use @custom-media to avoid repeating yourself. */
 @media screen and (min-width: 600px) {
 	.grid-example {
 		inherit: %grid-flex;
@@ -219,6 +224,9 @@
 }
 .button-pure:hover, .button-pure:focus {
 	button: bgcolor(var(--silver)) fgcolor(var(--black)) shade-gradient;
+}
+.button-pure:focus {
+	border-color: var(--blue);
 }</code></pre>
 	<p>
 		<a href="javascript:void(0)" class="button-pure">a.button-pure</a>
@@ -244,7 +252,7 @@
 	button: bgcolor(var(--white)) fgcolor(var(--fuchsia)) borderonly pill;
 }
 .button-borderonly:hover, .button-borderonly:focus {
-	button: bgcolor(var(--white)) fgcolor(var(--fuchsia) shade(25%)) borderonly;
+	button: bgcolor(var(--white)) fgcolor(var(--yellow)) borderonly;
 }</code></pre>
 	<p>
 		<button class="button-borderonly">pill borderonly button</button>
@@ -269,6 +277,91 @@
 
 <section>
 	<h3>Forms</h3>
+	<p>
+		This module is mostly inspired by <a href="http://purecss.io/forms/">Pure forms</a>.
+	</p>
+	<p>
+		A form with no custom styles is an inline form.
+		It already looks fine.
+		nextcss sets a default <code>border-color</code> focus style on form elements.
+	</p>
+	<pre><code class="language-markup">&lt;form&gt;
+	&lt;label&gt;
+		Search the web
+		&lt;input type="search"&gt;
+	&lt;/label&gt;
+	&lt;button class="button-pure"&gt;Go!&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+	<form>
+		<label>
+			Search the web
+			<input type="search">
+		</label>
+		<button class="button-pure">Go!</button>
+	</form>
+	<p>
+		This is a <strong>stacked</strong> form:
+	</p>
+	<pre><code class="language-css">.form-comment {
+	inherit: %form-stacked;
+}
+.form-comment input:focus,
+.form-comment select:focus,
+.form-comment textarea:focus,
+.form-comment button:focus {
+	border-color: transparent;
+	box-shadow: 0 0 4px var(--blue);
+}
+.form-comment input:focus:invalid {
+	box-shadow: 0 0 4px var(--red);
+}</code></pre>
+	<pre><code class="language-markup">&lt;form class="form-comment"&gt;
+	&lt;label&gt;
+		Name
+		&lt;input type="text" required&gt;
+	&lt;/label&gt;
+	&lt;label&gt;
+		Email
+		&lt;input type="email" required&gt;
+	&lt;/label&gt;
+	&lt;label&gt;
+		Are you a spammer?
+		&lt;select&gt;
+			&lt;option&gt;Yes&lt;/option&gt;
+			&lt;option&gt;No&lt;/option&gt;
+		&lt;/select&gt;
+	&lt;/label&gt;
+	&lt;label&gt;
+		Comment
+		&lt;textarea&gt;&lt;/textarea&gt;
+	&lt;/label&gt;
+	&lt;button class="button-pure"&gt;Post!&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+	<form class="form-comment">
+		<label>
+			Name
+			<input type="text" required>
+		</label>
+		<label>
+			Email
+			<input type="email" required>
+		</label>
+		<label>
+			Are you a spammer?
+			<select>
+				<option>Yes</option>
+				<option>No</option>
+			</select>
+		</label>
+		<label>
+			Comment
+			<textarea></textarea>
+		</label>
+		<button class="button-pure">Post!</button>
+	</form>
+	<p>
+		Here's an example of a <strong>grouped</strong> form, which is probably the best style for login forms that look fine on both narrow (mobile) and wide screens.
+	</p>
 	<pre><code class="language-css">.form-signup {
 	inherit: %form-grouped;
 	max-width: 320px; /* for demo purposes */
@@ -354,6 +447,33 @@
 			<span class="sr-only">Close</span>
 		</button>
 	</div>
+</section>
+
+<section>
+	<h3>Triangles</h3>
+	<p>
+		nextcss includes a triangle mixin, based on <a href="https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/addons/_triangle.scss">the one from Bourbon</a>.
+	</p>
+	<pre><code class="language-css">.demo-triangle-right {
+	triangle: size(5vw) bgcolor(var(--purple)) fgcolor(var(--yellow)) right;
+}
+.demo-triangle-up {
+	triangle: size(2em) color(var(--green)) up;
+}
+.demo-triangle-down {
+	triangle: size(14px) down;
+}
+.demo-triangle-down-left {
+	triangle: down-left size(2em) color(var(--teal));
+}</code></pre>
+	<p>
+		<span class="demo-triangle-left"></span>
+		<span class="demo-triangle-right"></span>
+		<span class="demo-triangle-up"></span>
+		<span class="demo-triangle-down"></span>
+		<span class="demo-triangle-down-left"></span>
+		<span class="demo-triangle-up-right"></span>
+	</p>
 </section>
 
 <script src="prism.js"></script>

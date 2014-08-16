@@ -1,6 +1,7 @@
 /*! nextcss/forms
  * Mostly inspired by:
  *   http://purecss.io/forms/
+ *   http://formalize.me/
  */
 
 input, select, textarea {
@@ -8,11 +9,38 @@ input, select, textarea {
 	padding: 0.5em 0.6em;
 	border: var(--silver) 1px solid;
 	border-radius: 4px;
+	vertical-align: baseline;
+	-webkit-appearance: none;
 }
 
-html input[disabled], select[disabled], textarea[disabled] {
+input:focus, select:focus, textarea:focus {
+	outline: 0;
+	border-color: var(--blue);
+}
+
+textarea {
+	resize: vertical;
+	min-height: 5em;
+}
+
+select {
+	/* Pseudo elements on select are not possible in webkit, so no CSS triangles without non-semantic markup.
+	 * Have to use formalize's background-image :-( */
+	background-image: url(data:image/png;base64,R0lGODlhDQAEAIAAAAAAAP8A/yH5BAEHAAEALAAAAAANAAQAAAILhA+hG5jMDpxvhgIAOw==);
+	background-repeat: no-repeat;
+	background-position: right center;
+	padding-right: 20px;
+}
+
+html input[disabled], select[disabled], select[disabled] option, select[disabled] optgroup, textarea[disabled] {
 	cursor: not-allowed;
+	user-select: none;
 	background: color(var(--gray) alpha(0.25));
+}
+
+%form-grouped, %form-stacked, %form-grouped input, %form-grouped select, %form-grouped textarea, %form-grouped button,
+%form-stacked input, %form-stacked select, %form-stacked textarea, %form-stacked label {
+	width: 100%;
 }
 
 %form-grouped fieldset {
@@ -20,10 +48,6 @@ html input[disabled], select[disabled], textarea[disabled] {
 	border: none;
 	border-radius: 4px;
 	padding: 0;
-}
-
-%form-grouped input, %form-grouped select, %form-grouped textarea, %form-grouped button {
-	width: 100%;
 }
 
 %form-grouped input, %form-grouped select, %form-grouped textarea {
@@ -46,4 +70,9 @@ html input[disabled], select[disabled], textarea[disabled] {
 	top: -2px;
 	border-bottom-left-radius: 4px;
 	border-bottom-right-radius: 4px;
+}
+
+%form-stacked label {
+	display: block;
+	margin-bottom: 0.8em;
 }

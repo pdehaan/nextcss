@@ -77,6 +77,9 @@ a:hover, a:focus { color: color(var(--red) tint(15%)); }
 .button-pure:hover, .button-pure:focus {
 	button: bgcolor(var(--silver)) fgcolor(var(--black)) shade-gradient;
 }
+.button-pure:focus {
+	border-color: var(--blue);
+}
 
 .button-success {
 	inherit: %button-base;
@@ -107,7 +110,7 @@ a:hover, a:focus { color: color(var(--red) tint(15%)); }
 	button: bgcolor(var(--white)) fgcolor(var(--fuchsia)) borderonly pill;
 }
 .button-borderonly:hover, .button-borderonly:focus {
-	button: bgcolor(var(--white)) fgcolor(var(--fuchsia) shade(25%)) borderonly;
+	button: bgcolor(var(--white)) fgcolor(var(--yellow)) borderonly;
 }
 .button-borderonly2 {
 	inherit: %button-base;
@@ -115,6 +118,17 @@ a:hover, a:focus { color: color(var(--red) tint(15%)); }
 }
 .button-borderonly2:hover, .button-borderonly2:focus {
 	button: bgcolor(var(--white)) fgcolor(var(--teal) shade(30%)) borderonly;
+}
+
+.form-comment {
+	inherit: %form-stacked;
+}
+.form-comment input:focus, .form-comment select:focus, .form-comment textarea:focus, .form-comment button:focus {
+	border-color: transparent;
+	box-shadow: 0 0 4px var(--blue);
+}
+.form-comment input:focus:invalid {
+	box-shadow: 0 0 4px var(--red);
 }
 
 .small-forms form { margin: 1em; }
@@ -145,10 +159,11 @@ a:hover, a:focus { color: color(var(--red) tint(15%)); }
 .form-login input {
 	border-width: 2px;
 	border-color: var(--fuchsia);
+	color: color(var(--yellow) shade(40%));
 }
 .form-login input:focus {
 	outline: none;
-	border-color: color(var(--fuchsia) shade(25%));
+	border-color: color(var(--yellow));
 }
 .form-login input, .form-login button {
 	transition: all 0.5s ease-in-quad;
@@ -171,4 +186,24 @@ a:hover, a:focus { color: color(var(--red) tint(15%)); }
 .alert-info {
 	inherit: %alert-base;
 	alert: color(var(--yellow));
+}
+
+.demo-triangle-left {
+	triangle: left;
+}
+.demo-triangle-right {
+	triangle: size(5vw) bgcolor(var(--purple)) fgcolor(var(--yellow)) right;
+}
+.demo-triangle-up {
+	triangle: size(2em) color(var(--green)) up;
+}
+.demo-triangle-down {
+	triangle: size(14px) down;
+}
+.demo-triangle-down-left {
+	triangle: down-left size(2em) color(var(--teal));
+}
+.demo-triangle-up-right {
+	triangle: up-right size(2em) color(var(--navy));
+	margin-left: -1.5em;
 }
