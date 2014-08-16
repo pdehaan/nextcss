@@ -8,7 +8,9 @@
 	},
 	"devDependencies": {
 		"grunt": "",
-		"grunt-broccoli": "",
+		"grunt-contrib-clean": "",
+		"grunt-broccoli": "quandl/grunt-broccoli",
+		"grunt-gh-pages": "",
 		"broccoli": "",
 		"broccoli-rework": "",
 		"broccoli-autoprefixer": "",
