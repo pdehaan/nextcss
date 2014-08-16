@@ -484,6 +484,86 @@
 </section>
 
 <section>
+	<h3>Tables</h3>
+	<p>
+		nextcss includes CSS-powered responsive tables, based on <a href="http://css-tricks.com/responsive-data-tables/">this article</a>.
+		You need each <code>td</code> element to have <code>data-col-label</code> set to the column label.
+		You can do it with a script or in a client-side or server-side templating language.
+		The example uses a script.
+	</p>
+	<pre><code class="language-css">@media screen and (max-width: 40em) {
+	.table-frameworks {
+		inherit: %table-collapsed;
+	}
+}</code></pre>
+	<pre><code class="language-markup">&lt;table class="table-frameworks"&gt;
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th&gt;Name&lt;/th&gt;
+			&lt;th&gt;Website&lt;/th&gt;
+			&lt;th&gt;Company&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td&gt;React&lt;/td&gt;
+			&lt;td&gt;&lt;a href="http://facebook.github.io/react/"&gt;facebook.github.io/react&lt;/a&gt;&lt;/td&gt;
+			&lt;td&gt;Facebook&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;!-- ... --&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+	<pre><code class="language-javascript">var ths = document.querySelectorAll('.table-frameworks th');
+var headings = [];
+for (var i = 0; i &lt; ths.length; i++)
+	headings.push(ths[i].innerText);
+var trs = document.querySelectorAll('.table-frameworks tbody tr');
+for (var i = 0; i &lt; trs.length; i++) {
+	var tds = trs[i].getElementsByTagName('td');
+	for (var j = 0; j &lt; tds.length; j++)
+		tds[j].setAttribute('data-col-label', headings[j]);
+}</code></pre>
+	<table class="table-frameworks">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Website</th>
+				<th>Company</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>React</td>
+				<td><a href="http://facebook.github.io/react/">facebook.github.io/react</a></td>
+				<td>Facebook</td>
+			</tr>
+			<tr>
+				<td>Ember</td>
+				<td><a href="http://emberjs.com">emberjs.com</a></td>
+				<td>Tilde</td>
+			</tr>
+			<tr>
+				<td>Angular</td>
+				<td><a href="http://angularjs.org">angularjs.org</a></td>
+				<td>Google</td>
+			</tr>
+		</tbody>
+	</table>
+	<script>
+		var ths = document.querySelectorAll('.table-frameworks th');
+		var headings = [];
+		for (var i = 0; i < ths.length; i++)
+			headings.push(ths[i].innerText);
+		var trs = document.querySelectorAll('.table-frameworks tbody tr');
+		for (var i = 0; i < trs.length; i++) {
+			var tds = trs[i].getElementsByTagName('td');
+			for (var j = 0; j < tds.length; j++)
+				tds[j].setAttribute('data-col-label', headings[j]);
+		}
+	</script>
+</section>
+
+<section>
 	<h3>Alerts</h3>
 	<p>
 		Alerts are created from a single color.

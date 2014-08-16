@@ -1,0 +1,52 @@
+/*! nextcss/tables
+ * Inspired by
+ *   http://css-tricks.com/responsive-data-tables/
+ */
+
+table {
+	width: 100%;
+}
+
+td, th {
+	padding: 0.4em;
+}
+
+tr:nth-child(even) {
+	background: color(var(--gray) alpha(0.025));
+}
+
+thead tr {
+	background: color(var(--gray) alpha(0.05));
+}
+thead th {
+	text-align: left;
+	padding-top: 0.8em;
+}
+
+%table-collapsed, %table-collapsed thead, %table-collapsed tbody, %table-collapsed th, %table-collapsed td, %table-collapsed tr {
+	display: block;
+}
+
+%table-collapsed thead tr {
+	inherit: %sr-only;
+}
+
+%table-collapsed tr {
+	padding: 0.6em 0;
+}
+
+%table-collapsed td {
+	position: relative;
+	padding-left: 50%; 
+}
+
+%table-collapsed td:before { 
+	content: attr(data-col-label);
+	position: absolute;
+	top: 0.4em;
+	left: 0;
+	width: 45%;
+	white-space: nowrap;
+	text-align: right;
+	font-weight: bold;
+}
