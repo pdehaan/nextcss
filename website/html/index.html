@@ -79,10 +79,15 @@
 	<h3>Base</h3>
 	<p>
 		nextcss automatically includes <a href="http://necolas.github.io/normalize.css/">normalize.css</a> v3.
-		And then a little more defaults, some from <a href="http://typeplate.com">typeplate</a> and some from me.
+		And then a little more defaults, some from <a href="http://typeplate.com">typeplate</a> and some from me:
 	</p>
+	<ul>
+		<li><code>* { box-sizing: border-box }</code></li>
+		<li>images are responsive by default (<code>max-width: 100%</code>) &mdash; who ever thought overflowing by default is a good idea?!</li>
+		<li><a href="http://caniuse.com/css-hyphens">hyphenation</a> is on by default (except <a href="http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation">where it shouldn't be</a>)</li>
+	</ul>
 	<p>
-		There's the <code>.sr-only</code> class from <a href="http://getbootstrap.com">Bootstrap</a> which is for screenreader-only text.
+		There's the <code>.sr-only</code> class (and <code>%sr-only</code> placeholder) from <a href="http://getbootstrap.com">Bootstrap</a> which is for screenreader-only text.
 		Like the opposite of <code>aria-hidden="true"</code>.
 	</p>
 	<p>
