@@ -280,6 +280,7 @@
 	<p>
 		This module is mostly inspired by <a href="http://purecss.io/forms/">Pure forms</a>.
 	</p>
+
 	<p>
 		A form with no custom styles is an inline form.
 		It already looks fine.
@@ -299,6 +300,7 @@
 		</label>
 		<button class="button-pure">Go!</button>
 	</form>
+
 	<p>
 		This is a <strong>stacked</strong> form:
 	</p>
@@ -333,7 +335,7 @@
 	&lt;/label&gt;
 	&lt;label&gt;
 		Comment
-		&lt;textarea&gt;&lt;/textarea&gt;
+		&lt;textarea required&gt;&lt;/textarea&gt;
 	&lt;/label&gt;
 	&lt;button class="button-pure"&gt;Post!&lt;/button&gt;
 &lt;/form&gt;</code></pre>
@@ -355,10 +357,80 @@
 		</label>
 		<label>
 			Comment
-			<textarea></textarea>
+			<textarea required></textarea>
 		</label>
 		<button class="button-pure">Post!</button>
 	</form>
+
+	<p>
+		A style that looks cool on wide screens is <strong>aligned</strong>.
+		It uses the exact same markup as <strong>stacked</strong>, so you can use it inside of a media query!
+		Resize your browser to see:
+	</p>
+	<pre><code class="language-css">.form-feedback {
+	inherit: %form-stacked;
+}
+.form-feedback input,
+.form-feedback select,
+.form-feedback textarea {
+	border-radius: 0;
+	border-width: 2px;
+	border-color: var(--teal);
+	color: color(var(--teal) shade(35%));
+}
+.form-feedback input:focus,
+.form-feedback select:focus,
+.form-feedback textarea:focus,
+.form-feedback button:focus {
+	border-color: var(--fuchsia);
+}
+.form-feedback input:focus:invalid {
+	border-color: color(var(--red) shade(15%));
+}
+@media screen and (min-width: 640px) {
+	.form-feedback {
+		inherit: %form-aligned;
+	}
+}</code></pre>
+	<pre><code class="language-markup">&lt;form class="form-feedback"&gt;
+	&lt;label&gt;
+		Your name
+		&lt;input type="text" required&gt;
+	&lt;/label&gt;
+	&lt;label&gt;
+		Feedback type
+		&lt;select&gt;
+			&lt;option&gt;Bug&lt;/option&gt;
+			&lt;option&gt;Idea&lt;/option&gt;
+			&lt;option&gt;Praise&lt;/option&gt;
+		&lt;/select&gt;
+	&lt;/label&gt;
+	&lt;label&gt;
+		What you want to say
+		&lt;textarea required&gt;&lt;/textarea&gt;
+	&lt;/label&gt;
+	&lt;button class="button-borderonly2"&gt;Send feedback&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+	<form class="form-feedback">
+		<label>
+			Your name
+			<input type="text" required>
+		</label>
+		<label>
+			Feedback type
+			<select>
+				<option>Bug</option>
+				<option>Idea</option>
+				<option>Praise</option>
+			</select>
+		</label>
+		<label>
+			What you want to say
+			<textarea required></textarea>
+		</label>
+		<button class="button-borderonly2">Send feedback</button>
+	</form>
+
 	<p>
 		Here's an example of a <strong>grouped</strong> form, which is probably the best style for login forms that look fine on both narrow (mobile) and wide screens.
 	</p>
@@ -408,7 +480,7 @@
 			<button class="button-borderonly">Log in</button>
 		</form>
 	</div>
-</div>
+
 </section>
 
 <section>
@@ -426,6 +498,9 @@
 .button-close {
 	inherit: %button-base;
 	button: bgcolor(transparent) fgcolor(inherit) circle(1.2em);
+}
+.button-close:focus {
+	border: var(--blue) 1px solid;
 }</code></pre>
 	<pre><code class="language-markup">&lt;div class="alert-success"&gt;
 	&lt;strong&gt;Successfully saved&lt;/strong&gt; your profile.

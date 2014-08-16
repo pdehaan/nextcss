@@ -52,7 +52,7 @@
 
 /* Yes this is 2014. Who still thinks the weird box model and overflowing images by default are good ideas?! */
 * { box-sizing: border-box; }
-img { max-width: 100%; }
+img { max-width: 100%; height: auto; }
 [hidden] { display: none !important; }
 
 html {

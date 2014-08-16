@@ -19,6 +19,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 textarea {
+	overflow: auto; /* For certain browsers */
 	resize: vertical;
 	min-height: 5em;
 }
@@ -75,4 +76,24 @@ html input[disabled], select[disabled], select[disabled] option, select[disabled
 %form-stacked label {
 	display: block;
 	margin-bottom: 0.8em;
+}
+
+%form-aligned label {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	margin-bottom: 0.8em;
+}
+
+%form-aligned input, %form-aligned select, %form-aligned textarea {
+	flex: 0 0 70%;
+	margin-left: 1em;
+}
+
+%align-without-label {
+	margin-left: 30%;
+}
+
+%form-aligned button {
+	inherit: %align-without-label;
 }
