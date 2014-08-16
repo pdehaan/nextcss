@@ -9,7 +9,7 @@
 	"main": "lib/index",
 	"style": "index",
 	"keywords": [
-		"css", "rework", "style", "stylesheets", "myth"
+		"css", "rework", "style", "stylesheets", "myth", "preprocessor"
 	],
 	"repository": {
 		"type": "git",
