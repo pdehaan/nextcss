@@ -9,7 +9,7 @@ body {
 	body {
 		width: 85%;
 	}
-	body > section > p {
+	& > section > p, & > section > ul {
 		width: 70%;
 	}
 }
