@@ -51,9 +51,16 @@
 }
 
 /* Yes this is 2014. Who still thinks the weird box model and overflowing images by default are good ideas?! */
-* { box-sizing: border-box; }
-img { max-width: 100%; height: auto; }
-[hidden] { display: none !important; }
+* {
+	box-sizing: border-box;
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+[hidden] {
+	display: none !important;
+}
 
 html {
 	hyphens: auto;
@@ -70,7 +77,8 @@ abbr {
 	inherit: %small-caps;
 	border-bottom: 1px dashed;
 }
-abbr:hover {
+
+&:hover {
 	cursor: help;
 }
 
@@ -82,6 +90,14 @@ ul {
 
 ul ul {
 	padding-left: 1em;
+}
+
+a {
+	text-decoration: none;
+}
+
+&:hover, &:focus {
+	text-decoration: underline;}
 }
 
 h1, h2, h3, h4, h5, h6 {
