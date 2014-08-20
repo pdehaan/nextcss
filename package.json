@@ -34,6 +34,7 @@
 		"rework-plugin-references": "1.0.x",
 		"rework-plugin-mixin": "1.0.x",
 		"rework-macro": "0.1.x",
-		"rework-palette": "0.0.x"
+		"rework-palette": "0.0.x",
+		"rework-parent": "0.0.x"
 	}
 }

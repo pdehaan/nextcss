@@ -66,20 +66,20 @@ a:hover, a:focus { color: color(red tint(15%)); }
 	inherit: %grid;
 	margin: 1em 0;
 }
-.grid-example > * {
+& > * {
 	background: color(purple tint(60%) alpha(0.4));
 }
 @media screen and (min-width: 38em) {
 	.grid-example {
 		inherit: %grid-flex;
 	}
-	.grid-example > * {
+	& > * {
 		padding: 0 0.6em;
 	}
-	.grid-example > .demo-two-of-three {
+	& > .demo-two-of-three {
 		flex: 0 0 66.66666%;
 	}
-	.grid-example > .demo-two-of-four {
+	& > .demo-two-of-four {
 		flex: 0 0 50%;
 	}
 }
@@ -87,74 +87,74 @@ a:hover, a:focus { color: color(red tint(15%)); }
 .button-pure {
 	button: bgcolor(silver) fgcolor(black) rounded;
 }
-.button-pure:hover, .button-pure:focus {
+&:hover, &:focus {
 	button-style: bgcolor(silver) fgcolor(black) shade-gradient;
 }
-.button-pure:focus {
+&:focus {
 	border-color: blue;
 }
 
 .button-success {
 	button: bgcolor(green) fgcolor(white) gradient;
 }
-.button-success:hover, .button-success:focus {
+&:hover, &:focus {
 	button-style: bgcolor(green shade(20%)) fgcolor(white) gradient bordered;
 }
 
 .button-yolo {
 	button: bgcolor(purple) circle(5em) gradient bordered;
 }
-.button-yolo:hover, .button-yolo:focus {
-	button: bgcolor(yellow) gradient bordered;
+&:hover, &:focus {
+	button-style: bgcolor(yellow) gradient bordered;
 }
 
 .button-yolo2 {
 	button: bgcolor(white) fgcolor(orange) circle(5em) borderonly;
 }
-.button-yolo2:hover, .button-yolo2:focus {
+&:hover, &:focus {
 	button-style: bgcolor(white) fgcolor(orange shade(15%)) borderonly;
 }
 
 .button-borderonly {
 	button: bgcolor(white) fgcolor(fuchsia) borderonly pill;
 }
-.button-borderonly:hover, .button-borderonly:focus {
+&:hover, &:focus {
 	button-style: bgcolor(white) fgcolor(yellow) borderonly;
 }
 .button-borderonly2 {
 	button: bgcolor(white) fgcolor(teal) borderonly;
 }
-.button-borderonly2:hover, .button-borderonly2:focus {
+&:hover, &:focus {
 	button-style: bgcolor(white) fgcolor(teal shade(30%)) borderonly;
 }
 
 .form-comment {
 	inherit: %form-stacked;
 }
-.form-comment input:focus, .form-comment select:focus, .form-comment textarea:focus, .form-comment button:focus {
+& input:focus, & select:focus, & textarea:focus, & button:focus {
 	border-color: transparent;
 	box-shadow: 0 0 4px blue;
 }
-.form-comment input:focus:invalid {
+&&:invalid {
 	box-shadow: 0 0 4px red;
 }
 
 .form-feedback {
 	inherit: %form-stacked;
 }
-.form-feedback label {
+& label {
 	color: color(teal shade(25%));
 }
-.form-feedback input, .form-feedback select, .form-feedback textarea {
+& input, & select, & textarea {
 	border-radius: 0;
 	border-width: 2px;
 	border-color: teal;
 	color: color(teal shade(35%));
 }
-.form-feedback input:focus, .form-feedback select:focus, .form-feedback textarea:focus, .form-feedback button:focus {
+&&:focus, & button:focus {
 	border-color: fuchsia;
 }
-.form-feedback input:focus:invalid {
+&&&:invalid {
 	border-color: color(red shade(15%));
 }
 @media screen and (min-width: 40em) {
@@ -174,12 +174,12 @@ a:hover, a:focus { color: color(red tint(15%)); }
 	inherit: %form-grouped;
 	max-width: 320px;
 }
-.form-signup input:focus {
+& input:focus {
 	outline: none;
 	border-color: green;
 	color: color(green shade(40%));
 }
-.form-signup input:focus:invalid {
+&&:invalid {
 	border-color: red;
 	color: color(red shade(40%));
 }
@@ -188,16 +188,16 @@ a:hover, a:focus { color: color(red tint(15%)); }
 	inherit: %form-grouped;
 	max-width: 320px;
 }
-.form-login input {
+& input {
 	border-width: 2px;
 	border-color: fuchsia;
 	color: color(yellow shade(40%));
 }
-.form-login input:focus {
+&&:focus {
 	outline: none;
 	border-color: color(yellow);
 }
-.form-login input, .form-login button {
+& input, & button {
 	transition: all 0.5s ease-in-quad;
 }
 
@@ -211,7 +211,7 @@ a:hover, a:focus { color: color(red tint(15%)); }
 	inherit: %button-base;
 	button: bgcolor(transparent) fgcolor(inherit) circle(1.2em);
 }
-.button-close:focus {
+&:focus {
 	border: blue 1px solid;
 }
 .alert-success {

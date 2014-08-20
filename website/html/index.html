@@ -32,6 +32,7 @@
 		<li><a href="https://github.com/reworkcss/rework-plugin-ease">rework-plugin-ease</a> &mdash; more <a href="http://easings.net">easing functions</a></li>
 		<li><a href="https://github.com/fgnass/rework-palette">rework-palette</a> &mdash; <a href="http://clrs.cc">clrs.cc</a> colors instead of the ugly default ones</li>
 		<li><a href="https://github.com/Isquariel/rework-clone">rework-clone</a> &mdash; cloning rules <small class="ob"> because I &hearts; <a href="https://en.wikipedia.org/wiki/Orphan_Black">clones</a></small></li>
+		<li><a href="https://github.com/fgnass/rework-parent">rework-parent</a> &mdash; <code>&</code> selector that refers to the previous selector</li>
 		<li>
 			<a href="http://myth.io">Myth</a>:
 			<ul>
@@ -231,10 +232,10 @@
 	<pre><code class="language-css">.button-pure {
 	button: bgcolor(silver) fgcolor(black) rounded;
 }
-.button-pure:hover, .button-pure:focus {
+&:hover, &:focus {
 	button-style: bgcolor(silver) fgcolor(black) shade-gradient;
 }
-.button-pure:focus {
+&:focus {
 	border-color: blue;
 }</code></pre>
 	<p>
@@ -246,7 +247,7 @@
 	<pre><code class="language-css">.button-success {
 	button: bgcolor(green) fgcolor(white) gradient;
 }
-.button-success:hover, .button-success:focus {
+&:hover, &:focus {
 	button-style: bgcolor(green shade(20%)) fgcolor(white) gradient bordered;
 }</code></pre>
 	<p>
@@ -258,7 +259,7 @@
 	<pre><code class="language-css">.button-borderonly {
 	button: bgcolor(white) fgcolor(fuchsia) borderonly pill;
 }
-.button-borderonly:hover, .button-borderonly:focus {
+&:hover, &:focus {
 	button-style: bgcolor(white) fgcolor(yellow) borderonly;
 }</code></pre>
 	<p>
@@ -269,7 +270,7 @@
 	<pre><code class="language-css">.button-yolo {
 	button: bgcolor(purple) circle(5em) gradient bordered;
 }
-.button-yolo:hover, .button-yolo:focus {
+&:hover, &:focus {
 	button-style: bgcolor(yellow) gradient bordered;
 }</code></pre>
 	<p>
@@ -313,14 +314,12 @@
 	<pre><code class="language-css">.form-comment {
 	inherit: %form-stacked;
 }
-.form-comment input:focus,
-.form-comment select:focus,
-.form-comment textarea:focus,
-.form-comment button:focus {
+& input:focus, & select:focus,
+& textarea:focus, & button:focus {
 	border-color: transparent;
 	box-shadow: 0 0 4px blue;
 }
-.form-comment input:focus:invalid {
+&&:invalid {
 	box-shadow: 0 0 4px red;
 }</code></pre>
 	<pre><code class="language-markup">&lt;form class="form-comment"&gt;
@@ -376,24 +375,19 @@
 	<pre><code class="language-css">.form-feedback {
 	inherit: %form-stacked;
 }
-.form-feedback label {
+& label {
 	color: color(teal shade(25%));
 }
-.form-feedback input,
-.form-feedback select,
-.form-feedback textarea {
+& input, & select, & textarea {
 	border-radius: 0;
 	border-width: 2px;
 	border-color: teal;
 	color: color(teal shade(35%));
 }
-.form-feedback input:focus,
-.form-feedback select:focus,
-.form-feedback textarea:focus,
-.form-feedback button:focus {
+&&:focus, & button:focus {
 	border-color: fuchsia;
 }
-.form-feedback input:focus:invalid {
+&&&:invalid {
 	border-color: color(red shade(15%));
 }
 @media screen and (min-width: 40em) {
@@ -447,12 +441,12 @@
 	inherit: %form-grouped;
 	max-width: 320px; /* for demo purposes */
 }
-.form-signup input:focus {
+& input:focus {
 	outline: none;
 	border-color: green;
 	color: color(green shade(40%));
 }
-.form-signup input:focus:invalid {
+&&:invalid {
 	border-color: red;
 	color: color(red shade(40%));
 }</code></pre>

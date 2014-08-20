@@ -13,11 +13,11 @@ input, select, textarea {
 	-webkit-appearance: none;
 }
 
-input:invalid, select:invalid, textarea:invalid {
+&:invalid {
 	box-shadow: none; /* Reset Firefox's default */
 }
 
-input:focus, select:focus, textarea:focus {
+&:focus {
 	outline: 0;
 	border-color: var(--blue);
 }
