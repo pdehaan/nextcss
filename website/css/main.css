@@ -125,6 +125,14 @@ a:hover, a:focus { color: color(red tint(15%)); }
 	display: block;
 }
 
+.list-files {
+	inherit: %list-vertical;
+}
+& a {
+	flex: 1;
+	margin-left: 0.5em;
+}
+
 .button-pure {
 	button: bgcolor(silver) fgcolor(black) rounded;
 }

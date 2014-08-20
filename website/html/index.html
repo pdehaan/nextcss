@@ -3,6 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>nextcss</title>
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Inconsolata|Nunito:300,700|Coda">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="prism.css">
 <link rel="stylesheet" href="bundle.css">
 
@@ -318,6 +319,36 @@
 			</article>
 		</section>
 	</article>
+</section>
+
+<section>
+	<h3>Lists</h3>
+	<p>
+		This is a normal vertical list:
+	</p>
+	<div class="grid-codez">
+		<div><pre><code class="language-css">.list-files {
+	inherit: %list-vertical;
+}
+& a {
+	flex: 1;
+	margin-left: 0.5em;
+}</code></pre></div>
+		<div><pre><code class="language-markup">&lt;ul class="list-files"&gt;
+	&lt;li&gt;&lt;i class="fa fa-file-code-o"&gt;&lt;/i&gt;&lt;a href="#"&gt;AUTOEXEC.BAT&lt;/a&gt; &lt;time&gt;a day ago&lt;/time&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;i class="fa fa-file-o     "&gt;&lt;/i&gt;&lt;a href="#"&gt;IO.SYS&lt;/a&gt;       &lt;time&gt;a day ago&lt;/time&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;i class="fa fa-file-o     "&gt;&lt;/i&gt;&lt;a href="#"&gt;COMMAND.COM&lt;/a&gt;  &lt;time&gt;a day ago&lt;/time&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;i class="fa fa-file-o     "&gt;&lt;/i&gt;&lt;a href="#"&gt;PRINTER.SYS&lt;/a&gt;  &lt;time&gt;a day ago&lt;/time&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;i class="fa fa-file-text-o"&gt;&lt;/i&gt;&lt;a href="#"&gt;DOSSHELL.INI&lt;/a&gt; &lt;time&gt;a day ago&lt;/time&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre></div>
+	</div>
+	<ul class="list-files">
+		<li><i class="fa fa-file-code-o"></i><a href="javascript:void(0)">AUTOEXEC.BAT</a> <time>a day ago</time></li>
+		<li><i class="fa fa-file-o     "></i><a href="javascript:void(0)">IO.SYS</a>       <time>a day ago</time></li>
+		<li><i class="fa fa-file-o     "></i><a href="javascript:void(0)">COMMAND.COM</a>  <time>a day ago</time></li>
+		<li><i class="fa fa-file-o     "></i><a href="javascript:void(0)">PRINTER.SYS</a>  <time>a day ago</time></li>
+		<li><i class="fa fa-file-text-o"></i><a href="javascript:void(0)">DOSSHELL.INI</a> <time>a day ago</time></li>
+	</ul>
 </section>
 
 <section>
