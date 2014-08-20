@@ -20,6 +20,7 @@ footer {
 }
 pre, code {
 	font-family: Inconsolata, monospace !important;
+	tab-size: 2 !important;
 }
 h1, h2, h3 {
 	font-family: Coda, monospace;
@@ -59,19 +60,23 @@ a:hover, a:focus { color: color(red tint(15%)); }
 .grid-demo-content {
 	background: color(yellow tint(50%) alpha(0.9));
 	text-align: center;
-	padding: 1em;
+	padding: 0.5em;
+	margin: 0.5em;
 	font-size: var(--delta);
 }
 .grid-example {
 	inherit: %grid;
-	margin: 1em 0;
 }
 & > * {
 	background: color(purple tint(60%) alpha(0.4));
 }
+& > *:nth-child(odd) {
+	background: color(purple tint(60%) alpha(0.2));
+}
 @media screen and (min-width: 38em) {
 	.grid-example {
 		inherit: %grid-flex;
+		margin: 1em 0;
 	}
 	& > * {
 		padding: 0 0.6em;
@@ -81,6 +86,18 @@ a:hover, a:focus { color: color(red tint(15%)); }
 	}
 	& > .demo-two-of-four {
 		flex: 0 0 50%;
+	}
+}
+
+.grid-codez {
+	inherit: %grid;
+}
+@media screen and (min-width: 70em) {
+	.grid-codez {
+		inherit: %grid-flex;
+	}
+	& > * {
+		padding: 0 0.4em;
 	}
 }
 
@@ -239,7 +256,7 @@ a:hover, a:focus { color: color(red tint(15%)); }
 
 .button-close {
 	inherit: %button-base;
-	button: bgcolor(transparent) fgcolor(inherit) circle(1.2em);
+	button: bgcolor(transparent) fgcolor(black) circle(1.2em);
 }
 &:focus {
 	border: blue 1px solid;

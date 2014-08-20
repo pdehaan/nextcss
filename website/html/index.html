@@ -7,7 +7,10 @@
 <link rel="stylesheet" href="bundle.css">
 
 <header>
-	<h1>nextcss</h1>
+	<h1>
+		nextcss
+		<small>a CSS framework from the future</small>
+	</h1>
 	<a href="https://github.com/myfreeweb/nextcss" class="button-pure">Star on GitHub!</a>
 </header>
 
@@ -163,23 +166,24 @@
 	<p>
 		This module is based on <a href="http://philipwalton.github.io/solved-by-flexbox/demos/grids/">Solved by Flexbox</a>.
 	</p>
-	<pre><code class="language-css">.grid-example {
+	<div class="grid-codez">
+		<div><pre><code class="language-css">.grid-example {
 	inherit: %grid;
-	margin: 1em 0;
 }
 /* You're in control of the breakpoint!
    Tip: use @custom-media to avoid repeating yourself. */
 @media screen and (min-width: 38em) {
 	.grid-example {
 		inherit: %grid-flex;
+		margin: 1em 0;
 	}
 	/* Gutters */
 	.grid-example > * { padding: 0 0.6em; }
 	/* Spans (be more creative with the class name pls) */
 	.grid-example > .demo-two-of-three { flex: 0 0 66.66666%; }
 	.grid-example > .demo-two-of-four { flex: 0 0 50%; }
-}</code></pre>
-	<pre><code class="language-markup">&lt;div class="grid-example"&gt;
+}</code></pre></div>
+		<div><pre><code class="language-markup">&lt;div class="grid-example"&gt;
 	&lt;div class="demo-two-of-four"&gt;
 		&lt;div class="grid-demo-content"&gt;2/4&lt;/div&gt;
 		&lt;div class="grid-example"&gt;
@@ -187,9 +191,16 @@
 			&lt;div&gt;&lt;div class="grid-demo-content"&gt;nested&lt;br&gt;1/2&lt;/div&gt;&lt;/div&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
-	&lt;div&gt;&lt;div class="grid-demo-content"&gt;&lt;br&gt;1/4&lt;br&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;
-	&lt;div&gt;&lt;div class="grid-demo-content"&gt;&lt;br&gt;1/4&lt;br&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+	&lt;div&gt;
+		&lt;div class="grid-demo-content"&gt;1/4&lt;/div&gt;
+		&lt;div class="grid-demo-content"&gt;1/4&lt;/div&gt;
+		&lt;div class="grid-demo-content"&gt;1/4&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div&gt;
+		&lt;div class="grid-demo-content"&gt;&lt;br&gt;&lt;br&gt;1/4&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+	</div>
 	<div class="grid-example">
 		<div><div class="grid-demo-content">1/2</div></div>
 		<div><div class="grid-demo-content">1/2</div></div>
@@ -206,8 +217,14 @@
 				<div><div class="grid-demo-content">nested<br>1/2</div></div>
 			</div>
 		</div>
-		<div><div class="grid-demo-content"><br>1/4<br><br></div></div>
-		<div><div class="grid-demo-content"><br>1/4<br><br></div></div>
+		<div>
+			<div class="grid-demo-content">1/4</div>
+			<div class="grid-demo-content">1/4</div>
+			<div class="grid-demo-content">1/4</div>
+		</div>
+		<div>
+			<div class="grid-demo-content"><br><br>1/4<br><br><br></div>
+		</div>
 	</div>
 </section>
 
@@ -311,7 +328,8 @@
 	<p>
 		These are forms <strong>with input addons</strong> (based on <a href="https://philipwalton.github.io/solved-by-flexbox/demos/input-add-ons/">Solved by Flexbox</a>):
 	</p>
-	<pre><code class="language-css">.form-search label {
+	<div class="grid-codez">
+		<div><pre><code class="language-css">.form-search label {
 	inherit: %input-addons;
 	inherit: %input-addons-rounded;
 }
@@ -328,8 +346,8 @@
 & span {
 	background: teal;
 	color: white;
-}</code></pre>
-	<pre><code class="language-markup">&lt;form class="form-search"&gt;
+}</code></pre></div>
+		<div><pre><code class="language-markup">&lt;form class="form-search"&gt;
 	&lt;label&gt;
 		&lt;span&gt;Search the web&lt;/span&gt;
 		&lt;input type="search"&gt;
@@ -341,7 +359,8 @@
 		&lt;input type="password"&gt;
 		&lt;span&gt;Password&lt;/button&gt;
 	&lt;/label&gt;
-&lt;/form&gt;</code></pre>
+&lt;/form&gt;</code></pre></div>
+	</div>
 	<form class="form-search">
 		<label>
 			<span>Search the web</span>
@@ -359,25 +378,26 @@
 	<p>
 		This is a <strong>stacked</strong> form:
 	</p>
-	<pre><code class="language-css">.form-comment {
+	<div class="grid-codez">
+		<div><pre><code class="language-css">.form-comment {
 	inherit: %form-stacked;
 }
-& input:focus, & select:focus,
-& textarea:focus, & button:focus {
+& input:focus,
+& select:focus,
+& textarea:focus,
+& button:focus {
 	border-color: transparent;
 	box-shadow: 0 0 4px blue;
 }
 &&:invalid {
 	box-shadow: 0 0 4px red;
-}</code></pre>
-	<pre><code class="language-markup">&lt;form class="form-comment"&gt;
+}</code></pre></div>
+	<div><pre><code class="language-markup">&lt;form class="form-comment"&gt;
 	&lt;label&gt;
-		Name
-		&lt;input type="text" required&gt;
+		Name &lt;input type="text" required&gt;
 	&lt;/label&gt;
 	&lt;label&gt;
-		Email
-		&lt;input type="email" required&gt;
+		Email &lt;input type="email" required&gt;
 	&lt;/label&gt;
 	&lt;label&gt;
 		Are you a spammer?
@@ -387,11 +407,11 @@
 		&lt;/select&gt;
 	&lt;/label&gt;
 	&lt;label&gt;
-		Comment
-		&lt;textarea required&gt;&lt;/textarea&gt;
+		Comment &lt;textarea required&gt;&lt;/textarea&gt;
 	&lt;/label&gt;
 	&lt;button class="button-pure"&gt;Post!&lt;/button&gt;
-&lt;/form&gt;</code></pre>
+&lt;/form&gt;</code></pre></div>
+	</div>
 	<form class="form-comment">
 		<label>
 			Name
@@ -421,7 +441,8 @@
 		This example also includes an input addon.
 		Resize your browser to see:
 	</p>
-	<pre><code class="language-css">.form-feedback {
+	<div class="grid-codez">
+		<div><pre><code class="language-css">.form-feedback {
 	inherit: %form-stacked;
 }
 & label {
@@ -450,8 +471,8 @@
 	.form-feedback {
 		inherit: %form-aligned;
 	}
-}</code></pre>
-	<pre><code class="language-markup">&lt;form class="form-feedback"&gt;
+}</code></pre></div>
+	<div><pre><code class="language-markup">&lt;form class="form-feedback"&gt;
 	&lt;label&gt;
 		Your name
 		&lt;div class="field-with-warning"&gt;
@@ -471,8 +492,11 @@
 		What you want to say
 		&lt;textarea required&gt;&lt;/textarea&gt;
 	&lt;/label&gt;
-	&lt;button class="button-borderonly2"&gt;Send feedback&lt;/button&gt;
-&lt;/form&gt;</code></pre>
+	&lt;button class="button-borderonly2"&gt;
+		Send feedback
+	&lt;/button&gt;
+&lt;/form&gt;</code></pre></div>
+	</div>
 	<form class="form-feedback">
 		<label>
 			Your name
@@ -499,7 +523,8 @@
 	<p>
 		Here's an example of a <strong>grouped</strong> form, which is probably the best style for login forms that look fine on both narrow (mobile) and wide screens.
 	</p>
-	<pre><code class="language-css">.form-signup {
+	<div class="grid-codez">
+		<div><pre><code class="language-css">.form-signup {
 	inherit: %form-grouped;
 	max-width: 320px; /* for demo purposes */
 }
@@ -511,8 +536,8 @@
 &&:invalid {
 	border-color: red;
 	color: color(red shade(40%));
-}</code></pre>
-	<pre><code class="language-markup">&lt;form class="form-signup"&gt;
+}</code></pre></div>
+	<div><pre><code class="language-markup">&lt;form class="form-signup"&gt;
 	&lt;fieldset&gt;
 		&lt;input type="text" placeholder="Username" required&gt;
 		&lt;input type="email" placeholder="Email" required&gt;
@@ -523,7 +548,8 @@
 		&lt;input type="password" placeholder="Confirm password" required&gt;
 	&lt;/fieldset&gt;
 	&lt;button class="button-success"&gt;Sign up!&lt;/button&gt;
-&lt;/form&gt;</code></pre>
+&lt;/form&gt;</code></pre></div>
+	</div>
 	<div class="small-forms">
 		<form class="form-signup">
 			<fieldset>
@@ -556,11 +582,23 @@
 		You can do it with a script or in a client-side or server-side templating language.
 		The example uses a script.
 	</p>
-	<pre><code class="language-css">@media screen and (max-width: 40em) {
+	<div class="grid-codez">
+		<div><pre><code class="language-css">@media screen and (max-width: 40em) {
 	.table-frameworks {
 		inherit: %table-collapsed;
 	}
-}</code></pre>
+}</code></pre></div>
+		<div><pre><code class="language-javascript">var ths = document.querySelectorAll('.table-frameworks th');
+var headings = [];
+for (var i = 0; i &lt; ths.length; i++)
+	headings.push(ths[i].innerHTML);
+var trs = document.querySelectorAll('.table-frameworks tbody tr');
+for (var i = 0; i &lt; trs.length; i++) {
+	var tds = trs[i].getElementsByTagName('td');
+	for (var j = 0; j &lt; tds.length; j++)
+		tds[j].setAttribute('data-col-label', headings[j]);
+}</code></pre></div>
+	</div>
 	<pre><code class="language-markup">&lt;table class="table-frameworks"&gt;
 	&lt;thead&gt;
 		&lt;tr&gt;
@@ -583,16 +621,6 @@
 		&lt;!-- ... --&gt;
 	&lt;/tbody&gt;
 &lt;/table&gt;</code></pre>
-	<pre><code class="language-javascript">var ths = document.querySelectorAll('.table-frameworks th');
-var headings = [];
-for (var i = 0; i &lt; ths.length; i++)
-	headings.push(ths[i].innerHTML);
-var trs = document.querySelectorAll('.table-frameworks tbody tr');
-for (var i = 0; i &lt; trs.length; i++) {
-	var tds = trs[i].getElementsByTagName('td');
-	for (var j = 0; j &lt; tds.length; j++)
-		tds[j].setAttribute('data-col-label', headings[j]);
-}</code></pre>
 	<table class="table-frameworks">
 		<thead>
 			<tr>
@@ -640,23 +668,25 @@ for (var i = 0; i &lt; trs.length; i++) {
 		Use the clrs palette or a similarly not-too-dark-not-too-bright color.
 		Or do the <code>background</code>/<code>color</code>/<code>border-color</code> yourself and use <code>inherit: %alert-base</code> instead of the <code>alert</code> mixin.
 	</p>
-	<pre><code class="language-css">.alert-success {
+	<div class="grid-codez">
+		<div><pre><code class="language-css">.alert-success {
 	alert: color(green);
 	border-width: 0;
 }
 .button-close {
-	button: bgcolor(transparent) fgcolor(inherit) circle(1.2em);
+	button: bgcolor(transparent) fgcolor(black) circle(1.2em);
 }
-.button-close:focus {
+&:focus {
 	border: blue 1px solid;
-}</code></pre>
-	<pre><code class="language-markup">&lt;div class="alert-success"&gt;
+}</code></pre></div>
+		<div><pre><code class="language-markup">&lt;div class="alert-success"&gt;
 	&lt;strong&gt;Successfully saved&lt;/strong&gt; your profile.
 	&lt;button class="button-close"&gt;
 		&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;
 		&lt;span class="sr-only"&gt;Close&lt;/span&gt;
 	&lt;/button&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;</code></pre></div>
+	</div>
 	<div class="alert-info">
 		Welcome back!
 	</div>
@@ -700,7 +730,7 @@ for (var i = 0; i &lt; trs.length; i++) {
 </section>
 
 <footer>
-	nextjs is made by <a href="https://github.com/myfreeweb">@myfreeweb</a>, licensed under <a href="https://www.tldrlegal.com/l/apache2">the apache license</a>.
+	nextcss is made by <a href="https://github.com/myfreeweb">@myfreeweb</a>, licensed under <a href="https://www.tldrlegal.com/l/apache2">the apache license</a>.
 	thanks a lot &hearts; the authors of <a href="http://getbootstrap.com">bootstrap</a>, <a href="https://github.com/thoughtbot/bourbon">bourbon</a>, <a href="http://clrs.cc">clrs.cc</a>, <a href="http://alexwolfe.github.io/Buttons/">Buttons</a>, <a href="http://purecss.io">Pure</a>, <a href="http://necolas.github.io/normalize.css/">normalize.css</a>, <a href="http://typeplate.com">typeplate</a> and all the other things
 </footer>
 
