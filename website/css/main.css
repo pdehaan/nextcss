@@ -221,17 +221,14 @@ a:hover, a:focus { color: color(var(--red) tint(15%)); }
 	border: var(--blue) 1px solid;
 }
 .alert-success {
-	inherit: %alert-base;
 	alert: color(var(--green));
 	border-width: 0;
 }
 .alert-error {
-	inherit: %alert-base;
 	alert: color(var(--red));
 	border-width: 2px;
 }
 .alert-info {
-	inherit: %alert-base;
 	alert: color(var(--yellow));
 }
 
