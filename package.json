@@ -28,7 +28,7 @@
 		"myth": "1.1.x",
 		"normalize.css": "3.0.x",
 		"rework-npm": "1.0.x",
-		"rework-inherit": "0.2.x",
+		"rework-inherit": "myfreeweb/rework-inherit#patch-1",
 		"rework-clone": "0.1.x",
 		"rework-plugin-ease": "1.0.x",
 		"rework-plugin-references": "1.0.x",
