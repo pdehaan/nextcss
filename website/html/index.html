@@ -74,6 +74,11 @@
 }
 @import "nextcss";</code></pre>
 	<p>
+		There is a way to only import placeholders, without any top level rules (for <em>special cases</em> like components or something):
+	</p>
+	<pre><code class="language-css">@import "nextcss/all";</code></pre>
+	<h3>Building</h3>
+	<p>
 		<a href="https://github.com/broccolijs/broccoli">Broccoli</a> is the recommended build tool.
 		Here's an example part of a build file of a nextcss project, using <a href="https://github.com/myfreeweb/sweetbuild">sweetbuild</a> macros for <a href="http://sweetjs.org">Sweet.js</a>:
 	</p>

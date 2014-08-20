@@ -3,23 +3,24 @@
  *   http://css-tricks.com/responsive-data-tables/
  */
 
-table {
+%table {
 	width: 100%;
 	table-layout: fixed;
 }
 
-td, th {
+%table td, %table th {
 	padding: 0.4em;
 }
 
-tr:nth-child(even) {
+%table tr:nth-child(even) {
 	background: color(gray alpha(0.05));
 }
 
-thead tr {
+%table thead tr {
 	background: color(gray alpha(0.07));
 }
-thead th {
+
+%table thead th {
 	text-align: left;
 	padding-top: 0.7em;
 	border-bottom: color(gray alpha(0.1)) solid 3px;

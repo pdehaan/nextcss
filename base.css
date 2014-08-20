@@ -77,3 +77,12 @@ h3 { font-size: var(--gamma); }
 h4 { font-size: var(--delta); }
 h5 { font-size: var(--epsilon); }
 h6 { font-size: var(--zeta); }
+
+/* because importing nextcss/all should not add any top-level stuff, only placeholders */
+
+input, select, textarea { inherit: %form-element; }
+textarea { inherit: %textarea; }
+select { inherit: %select; }
+html input[disabled], select[disabled], select[disabled] option, select[disabled] optgroup, textarea[disabled] { inherit: %disabled-form-element; }
+
+table { inherit: %table; }

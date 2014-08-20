@@ -5,7 +5,7 @@
  *   http://getbootstrap.com/css/
  */
 
-input, select, textarea {
+%form-element {
 	display: inline-block;
 	padding: 0.5em 0.6em;
 	border: silver 1px solid;
@@ -23,13 +23,13 @@ input, select, textarea {
 	border-color: blue;
 }
 
-textarea {
+%textarea {
 	overflow: auto; /* For certain browsers */
 	resize: vertical;
 	min-height: 5em;
 }
 
-select {
+%select {
 	/* Pseudo elements on select are not possible in webkit, so no CSS triangles without non-semantic markup.
 	 * Have to use formalize's background-image :-( */
 	background-image: url(data:image/png;base64,R0lGODlhDQAEAIAAAAAAAP8A/yH5BAEHAAEALAAAAAANAAQAAAILhA+hG5jMDpxvhgIAOw==);
@@ -38,15 +38,15 @@ select {
 	padding-right: 20px;
 }
 
-html input[disabled], select[disabled], select[disabled] option, select[disabled] optgroup, textarea[disabled] {
+%disabled-form-element {
 	cursor: not-allowed;
 	user-select: none;
 	pointer-events: none;
 	background: color(gray alpha(0.25));
 }
 
-%form-grouped, %form-stacked, %form-grouped input, %form-grouped select, %form-grouped textarea, %form-grouped button,
-%form-stacked input, %form-stacked select, %form-stacked textarea, %form-stacked label {
+%form-grouped, %form-stacked, %form-grouped %form-element, %form-grouped button,
+%form-stacked %form-element, %form-stacked label {
 	width: 100%;
 }
 
@@ -57,23 +57,23 @@ html input[disabled], select[disabled], select[disabled] option, select[disabled
 	padding: 0;
 }
 
-%form-grouped input, %form-grouped select, %form-grouped textarea {
+%form-grouped %form-element {
 	position: relative;
 	top: -1px;
 	border-radius: 0;
 }
 
-%form-grouped input:focus, %form-grouped select:focus, %form-grouped textarea:focus {
+&:focus {
 	z-index: 2;
 }
 
-%form-grouped input:first-child, %form-grouped select:first-child, %form-grouped textarea:first-child {
+&:first-child {
 	top: 1px;
 	border-top-left-radius:  var(--n-border-radius);
 	border-top-right-radius: var(--n-border-radius);
 }
 
-%form-grouped input:last-child, %form-grouped select:last-child, %form-grouped textarea:last-child {
+&:last-child {
 	top: -2px;
 	border-bottom-left-radius:  var(--n-border-radius);
 	border-bottom-right-radius: var(--n-border-radius);
@@ -149,6 +149,6 @@ html input[disabled], select[disabled], select[disabled] option, select[disabled
 	border-bottom-right-radius: var(--n-border-radius);
 }
 
-%input-addons input, %input-addons select, %input-addons textarea {
+%input-addons %form-element {
 	flex: 1;
 }
