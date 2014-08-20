@@ -280,6 +280,9 @@ a:hover, a:focus { color: color(red tint(15%)); }
 	transition: all 0.5s ease-in-quad;
 }
 
+.table-frameworks {
+	inherit: %table-striped;
+}
 @media screen and (max-width: 40em) {
 	.table-frameworks {
 		inherit: %table-collapsed;
