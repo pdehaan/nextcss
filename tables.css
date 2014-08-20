@@ -13,16 +13,16 @@ td, th {
 }
 
 tr:nth-child(even) {
-	background: color(var(--gray) alpha(0.05));
+	background: color(gray alpha(0.05));
 }
 
 thead tr {
-	background: color(var(--gray) alpha(0.07));
+	background: color(gray alpha(0.07));
 }
 thead th {
 	text-align: left;
 	padding-top: 0.7em;
-	border-bottom: color(var(--gray) alpha(0.1)) solid 3px;
+	border-bottom: color(gray alpha(0.1)) solid 3px;
 }
 
 %table-collapsed, %table-collapsed thead, %table-collapsed tbody, %table-collapsed th, %table-collapsed td, %table-collapsed tr {

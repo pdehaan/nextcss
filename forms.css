@@ -20,7 +20,7 @@ input, select, textarea {
 
 &:focus {
 	outline: 0;
-	border-color: var(--blue);
+	border-color: blue;
 }
 
 textarea {
@@ -42,7 +42,7 @@ html input[disabled], select[disabled], select[disabled] option, select[disabled
 	cursor: not-allowed;
 	user-select: none;
 	pointer-events: none;
-	background: color(var(--gray) alpha(0.25));
+	background: color(gray alpha(0.25));
 }
 
 %form-grouped, %form-stacked, %form-grouped input, %form-grouped select, %form-grouped textarea, %form-grouped button,
