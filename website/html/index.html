@@ -67,7 +67,12 @@
 		The <a href="http://npmjs.org">npm</a> module <code>nextcss</code> exports the Rework plugin.
 		It includes <a href="https://github.com/reworkcss/rework-npm">rework-npm</a>, which lets you import the framework styles from your stylesheet:
 	</p>
-	<pre><code class="language-css">@import "nextcss";</code></pre>
+	<pre><code class="language-css">:root {
+	/* You can do the following
+	   customization before importing: */
+	--border-radius: 4px;
+}
+@import "nextcss";</code></pre>
 	<p>
 		<a href="https://github.com/broccolijs/broccoli">Broccoli</a> is the recommended build tool.
 		Here's an example part of a build file of a nextcss project, using <a href="https://github.com/myfreeweb/sweetbuild">sweetbuild</a> macros for <a href="http://sweetjs.org">Sweet.js</a>:

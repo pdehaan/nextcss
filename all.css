@@ -1,3 +1,7 @@
+:root {
+	--n-border-radius: var(--border-radius, 4px);
+}
+
 @import "./grids";
 @import "./media";
 @import "./buttons";

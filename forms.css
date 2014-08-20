@@ -8,8 +8,8 @@
 input, select, textarea {
 	display: inline-block;
 	padding: 0.5em 0.6em;
-	border: var(--silver) 1px solid;
-	border-radius: 4px;
+	border: silver 1px solid;
+	border-radius: var(--n-border-radius);
 	vertical-align: baseline;
 	-webkit-appearance: none;
 }
@@ -53,7 +53,7 @@ html input[disabled], select[disabled], select[disabled] option, select[disabled
 %form-grouped fieldset {
 	margin: 0 0 1em 0;
 	border: none;
-	border-radius: 4px;
+	border-radius: var(--n-border-radius);
 	padding: 0;
 }
 
@@ -69,14 +69,14 @@ html input[disabled], select[disabled], select[disabled] option, select[disabled
 
 %form-grouped input:first-child, %form-grouped select:first-child, %form-grouped textarea:first-child {
 	top: 1px;
-	border-top-left-radius: 4px;
-	border-top-right-radius: 4px;
+	border-top-left-radius:  var(--n-border-radius);
+	border-top-right-radius: var(--n-border-radius);
 }
 
 %form-grouped input:last-child, %form-grouped select:last-child, %form-grouped textarea:last-child {
 	top: -2px;
-	border-bottom-left-radius: 4px;
-	border-bottom-right-radius: 4px;
+	border-bottom-left-radius:  var(--n-border-radius);
+	border-bottom-right-radius: var(--n-border-radius);
 }
 
 %form-stacked label {
@@ -110,7 +110,7 @@ html input[disabled], select[disabled], select[disabled] option, select[disabled
 }
 
 %input-addons-rounded {
-	border-radius: 4px;
+	border-radius: var(--n-border-radius);
 }
 
 %input-addons span, %input-addons button {
@@ -140,13 +140,13 @@ html input[disabled], select[disabled], select[disabled] option, select[disabled
 }
 
 %input-addons-rounded > *:first-child {
-	border-top-left-radius: 4px;
-	border-bottom-left-radius: 4px;
+	border-top-left-radius:    var(--n-border-radius);
+	border-bottom-left-radius: var(--n-border-radius) ;
 }
 
 %input-addons-rounded > *:last-child {
-	border-top-right-radius: 4px;
-	border-bottom-right-radius: 4px;
+	border-top-right-radius:    var(--n-border-radius);
+	border-bottom-right-radius: var(--n-border-radius);
 }
 
 %input-addons input, %input-addons select, %input-addons textarea {
