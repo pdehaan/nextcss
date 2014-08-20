@@ -22,7 +22,7 @@
 		<a href="http://myth.io">Myth</a> and some other useful extensions are wrapped in one single Rework plugin.
 	</p>
 	<p>
-		With nextcss, you can use the future CSS syntax for <a href="https://github.com/reworkcss/rework-plugin-colors">colors</a>, <a href="https://github.com/reworkcss/rework-vars">variables</a> and <a href="https://github.com/reworkcss/rework-custom-media">named media queries</a>.
+		With nextcss, you can use the future CSS syntax for <a href="https://github.com/ianstormtaylor/rework-color-function">colors</a>, <a href="https://github.com/reworkcss/rework-vars">variables</a> and <a href="https://github.com/reworkcss/rework-custom-media">named media queries</a>.
 		<a href="https://github.com/klei-dev/rework-calc">calc</a> operations that can be done at compile time are calculated too.
 	</p>
 	<p>
@@ -104,17 +104,17 @@
 <section>
 	<h3>Colors</h3>
 	<p>
-		The &ldquo;new default&rdquo; <a href="http://clrs.cc">clrs.cc</a> palette is available as <a href="https://github.com/reworkcss/rework-vars">variables</a>.
-		The <a href="https://github.com/reworkcss/rework-plugin-colors">color()</a> function is available for color manipulation.
+		The &ldquo;new default&rdquo; <a href="http://clrs.cc">clrs.cc</a> palette is <a href="https://github.com/fgnass/rework-palette">used instead of default colors</a>.
+		The <a href="https://github.com/ianstormtaylor/rework-color-function">color()</a> function is available for color manipulation.
 	</p>
 	<p>
-		It is recommended to create more semantic variables (&ldquo;success&rdquo; instead of &ldquo;green&rdquo;):
+		It is recommended to create semantic color variables (&ldquo;success&rdquo; instead of &ldquo;green&rdquo;):
 	</p>
 
 	<pre><code class="language-css">:root {
-	--success: var(--green);
-	--action: var(--blue);
-	--failure: var(--red);
+	--success: green;
+	--action: blue;
+	--failure: red;
 }
 .success-thingy {
 	background: linear-gradient(to bottom,
@@ -207,13 +207,13 @@
 	</p>
 
 	<pre><code class="language-css">.button-pure {
-	button: bgcolor(var(--silver)) fgcolor(var(--black)) rounded;
+	button: bgcolor(silver) fgcolor(black) rounded;
 }
 .button-pure:hover, .button-pure:focus {
-	button-style: bgcolor(var(--silver)) fgcolor(var(--black)) shade-gradient;
+	button-style: bgcolor(silver) fgcolor(black) shade-gradient;
 }
 .button-pure:focus {
-	border-color: var(--blue);
+	border-color: blue;
 }</code></pre>
 	<p>
 		<a href="javascript:void(0)" class="button-pure">a.button-pure</a>
@@ -222,10 +222,10 @@
 	</p>
 
 	<pre><code class="language-css">.button-success {
-	button: bgcolor(var(--green)) fgcolor(var(--white)) gradient;
+	button: bgcolor(green) fgcolor(white) gradient;
 }
 .button-success:hover, .button-success:focus {
-	button-style: bgcolor(var(--green) shade(20%)) fgcolor(var(--white)) gradient bordered;
+	button-style: bgcolor(green shade(20%)) fgcolor(white) gradient bordered;
 }</code></pre>
 	<p>
 		<a href="javascript:void(0)" class="button-success">a.button-success</a>
@@ -234,10 +234,10 @@
 	</p>
 
 	<pre><code class="language-css">.button-borderonly {
-	button: bgcolor(var(--white)) fgcolor(var(--fuchsia)) borderonly pill;
+	button: bgcolor(white) fgcolor(fuchsia) borderonly pill;
 }
 .button-borderonly:hover, .button-borderonly:focus {
-	button-style: bgcolor(var(--white)) fgcolor(var(--yellow)) borderonly;
+	button-style: bgcolor(white) fgcolor(yellow) borderonly;
 }</code></pre>
 	<p>
 		<button class="button-borderonly">pill borderonly button</button>
@@ -245,10 +245,10 @@
 	</p>
 
 	<pre><code class="language-css">.button-yolo {
-	button: bgcolor(var(--purple)) circle(5em) gradient bordered;
+	button: bgcolor(purple) circle(5em) gradient bordered;
 }
 .button-yolo:hover, .button-yolo:focus {
-	button-style: bgcolor(var(--yellow)) gradient bordered;
+	button-style: bgcolor(yellow) gradient bordered;
 }</code></pre>
 	<p>
 		<button class="button-yolo2">YOLO</button>
@@ -296,10 +296,10 @@
 .form-comment textarea:focus,
 .form-comment button:focus {
 	border-color: transparent;
-	box-shadow: 0 0 4px var(--blue);
+	box-shadow: 0 0 4px blue;
 }
 .form-comment input:focus:invalid {
-	box-shadow: 0 0 4px var(--red);
+	box-shadow: 0 0 4px red;
 }</code></pre>
 	<pre><code class="language-markup">&lt;form class="form-comment"&gt;
 	&lt;label&gt;
@@ -355,24 +355,24 @@
 	inherit: %form-stacked;
 }
 .form-feedback label {
-	color: color(var(--teal) shade(25%));
+	color: color(teal shade(25%));
 }
 .form-feedback input,
 .form-feedback select,
 .form-feedback textarea {
 	border-radius: 0;
 	border-width: 2px;
-	border-color: var(--teal);
-	color: color(var(--teal) shade(35%));
+	border-color: teal;
+	color: color(teal shade(35%));
 }
 .form-feedback input:focus,
 .form-feedback select:focus,
 .form-feedback textarea:focus,
 .form-feedback button:focus {
-	border-color: var(--fuchsia);
+	border-color: fuchsia;
 }
 .form-feedback input:focus:invalid {
-	border-color: color(var(--red) shade(15%));
+	border-color: color(red shade(15%));
 }
 @media screen and (min-width: 40em) {
 	.form-feedback {
@@ -427,12 +427,12 @@
 }
 .form-signup input:focus {
 	outline: none;
-	border-color: var(--green);
-	color: color(var(--green) shade(40%));
+	border-color: green;
+	color: color(green shade(40%));
 }
 .form-signup input:focus:invalid {
-	border-color: var(--red);
-	color: color(var(--red) shade(40%));
+	border-color: red;
+	color: color(red shade(40%));
 }</code></pre>
 	<pre><code class="language-markup">&lt;form class="form-signup"&gt;
 	&lt;fieldset&gt;
@@ -563,14 +563,14 @@ for (var i = 0; i &lt; trs.length; i++) {
 		Or do the <code>background</code>/<code>color</code>/<code>border-color</code> yourself and use <code>inherit: %alert-base</code> instead of the <code>alert</code> mixin.
 	</p>
 	<pre><code class="language-css">.alert-success {
-	alert: color(var(--green));
+	alert: color(green);
 	border-width: 0;
 }
 .button-close {
 	button: bgcolor(transparent) fgcolor(inherit) circle(1.2em);
 }
 .button-close:focus {
-	border: var(--blue) 1px solid;
+	border: blue 1px solid;
 }</code></pre>
 	<pre><code class="language-markup">&lt;div class="alert-success"&gt;
 	&lt;strong&gt;Successfully saved&lt;/strong&gt; your profile.
@@ -600,16 +600,16 @@ for (var i = 0; i &lt; trs.length; i++) {
 		nextcss includes a triangle mixin, based on <a href="https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/addons/_triangle.scss">the one from Bourbon</a>.
 	</p>
 	<pre><code class="language-css">.demo-triangle-right {
-	triangle: size(5vw) bgcolor(var(--purple)) fgcolor(var(--yellow)) right;
+	triangle: size(5vw) bgcolor(purple) fgcolor(yellow) right;
 }
 .demo-triangle-up {
-	triangle: size(2em) color(var(--green)) up;
+	triangle: size(2em) color(green) up;
 }
 .demo-triangle-down {
 	triangle: size(14px) down;
 }
 .demo-triangle-down-left {
-	triangle: down-left size(2em) color(var(--teal));
+	triangle: down-left size(2em) color(teal);
 }</code></pre>
 	<p>
 		<span class="demo-triangle-left"></span>

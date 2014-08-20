@@ -14,7 +14,7 @@ body {
 	}
 }
 footer {
-	color: var(--gray);
+	color: gray;
 	margin: 3em 0;
 	font-size: 0.8em;
 }
@@ -26,17 +26,17 @@ h1, h2, h3 {
 	font-weight: 400;
 }
 
-a { color: color(var(--red) shade(10%)); }
-a:hover, a:focus { color: color(var(--red) tint(15%)); }
+a { color: color(red shade(10%)); }
+a:hover, a:focus { color: color(red tint(15%)); }
 
 .thingies {
 	display: flex;
 	overflow: scroll;
 }
 :root {
-	--success: var(--green);
-	--action: var(--blue);
-	--failure: var(--red);
+	--success: green;
+	--action: blue;
+	--failure: red;
 }
 .success-thingy {
 	background: linear-gradient(to bottom, color(var(--success) tint(20%)), color(var(--success) shade(20%)));
@@ -57,7 +57,7 @@ a:hover, a:focus { color: color(var(--red) tint(15%)); }
 }
 
 .grid-demo-content {
-	background: color(var(--yellow) tint(50%) alpha(0.9));
+	background: color(yellow tint(50%) alpha(0.9));
 	text-align: center;
 	padding: 1em;
 	font-size: var(--delta);
@@ -67,7 +67,7 @@ a:hover, a:focus { color: color(var(--red) tint(15%)); }
 	margin: 1em 0;
 }
 .grid-example > * {
-	background: color(var(--purple) tint(60%) alpha(0.4));
+	background: color(purple tint(60%) alpha(0.4));
 }
 @media screen and (min-width: 38em) {
 	.grid-example {
@@ -85,47 +85,47 @@ a:hover, a:focus { color: color(var(--red) tint(15%)); }
 }
 
 .button-pure {
-	button: bgcolor(var(--silver)) fgcolor(var(--black)) rounded;
+	button: bgcolor(silver) fgcolor(black) rounded;
 }
 .button-pure:hover, .button-pure:focus {
-	button-style: bgcolor(var(--silver)) fgcolor(var(--black)) shade-gradient;
+	button-style: bgcolor(silver) fgcolor(black) shade-gradient;
 }
 .button-pure:focus {
-	border-color: var(--blue);
+	border-color: blue;
 }
 
 .button-success {
-	button: bgcolor(var(--green)) fgcolor(var(--white)) gradient;
+	button: bgcolor(green) fgcolor(white) gradient;
 }
 .button-success:hover, .button-success:focus {
-	button-style: bgcolor(var(--green) shade(20%)) fgcolor(var(--white)) gradient bordered;
+	button-style: bgcolor(green shade(20%)) fgcolor(white) gradient bordered;
 }
 
 .button-yolo {
-	button: bgcolor(var(--purple)) circle(5em) gradient bordered;
+	button: bgcolor(purple) circle(5em) gradient bordered;
 }
 .button-yolo:hover, .button-yolo:focus {
-	button: bgcolor(var(--yellow)) gradient bordered;
+	button: bgcolor(yellow) gradient bordered;
 }
 
 .button-yolo2 {
-	button: bgcolor(var(--white)) fgcolor(var(--orange)) circle(5em) borderonly;
+	button: bgcolor(white) fgcolor(orange) circle(5em) borderonly;
 }
 .button-yolo2:hover, .button-yolo2:focus {
-	button-style: bgcolor(var(--white)) fgcolor(var(--orange) shade(15%)) borderonly;
+	button-style: bgcolor(white) fgcolor(orange shade(15%)) borderonly;
 }
 
 .button-borderonly {
-	button: bgcolor(var(--white)) fgcolor(var(--fuchsia)) borderonly pill;
+	button: bgcolor(white) fgcolor(fuchsia) borderonly pill;
 }
 .button-borderonly:hover, .button-borderonly:focus {
-	button-style: bgcolor(var(--white)) fgcolor(var(--yellow)) borderonly;
+	button-style: bgcolor(white) fgcolor(yellow) borderonly;
 }
 .button-borderonly2 {
-	button: bgcolor(var(--white)) fgcolor(var(--teal)) borderonly;
+	button: bgcolor(white) fgcolor(teal) borderonly;
 }
 .button-borderonly2:hover, .button-borderonly2:focus {
-	button-style: bgcolor(var(--white)) fgcolor(var(--teal) shade(30%)) borderonly;
+	button-style: bgcolor(white) fgcolor(teal shade(30%)) borderonly;
 }
 
 .form-comment {
@@ -133,29 +133,29 @@ a:hover, a:focus { color: color(var(--red) tint(15%)); }
 }
 .form-comment input:focus, .form-comment select:focus, .form-comment textarea:focus, .form-comment button:focus {
 	border-color: transparent;
-	box-shadow: 0 0 4px var(--blue);
+	box-shadow: 0 0 4px blue;
 }
 .form-comment input:focus:invalid {
-	box-shadow: 0 0 4px var(--red);
+	box-shadow: 0 0 4px red;
 }
 
 .form-feedback {
 	inherit: %form-stacked;
 }
 .form-feedback label {
-	color: color(var(--teal) shade(25%));
+	color: color(teal shade(25%));
 }
 .form-feedback input, .form-feedback select, .form-feedback textarea {
 	border-radius: 0;
 	border-width: 2px;
-	border-color: var(--teal);
-	color: color(var(--teal) shade(35%));
+	border-color: teal;
+	color: color(teal shade(35%));
 }
 .form-feedback input:focus, .form-feedback select:focus, .form-feedback textarea:focus, .form-feedback button:focus {
-	border-color: var(--fuchsia);
+	border-color: fuchsia;
 }
 .form-feedback input:focus:invalid {
-	border-color: color(var(--red) shade(15%));
+	border-color: color(red shade(15%));
 }
 @media screen and (min-width: 40em) {
 	.form-feedback {
@@ -176,12 +176,12 @@ a:hover, a:focus { color: color(var(--red) tint(15%)); }
 }
 .form-signup input:focus {
 	outline: none;
-	border-color: var(--green);
-	color: color(var(--green) shade(40%));
+	border-color: green;
+	color: color(green shade(40%));
 }
 .form-signup input:focus:invalid {
-	border-color: var(--red);
-	color: color(var(--red) shade(40%));
+	border-color: red;
+	color: color(red shade(40%));
 }
 
 .form-login {
@@ -190,12 +190,12 @@ a:hover, a:focus { color: color(var(--red) tint(15%)); }
 }
 .form-login input {
 	border-width: 2px;
-	border-color: var(--fuchsia);
-	color: color(var(--yellow) shade(40%));
+	border-color: fuchsia;
+	color: color(yellow shade(40%));
 }
 .form-login input:focus {
 	outline: none;
-	border-color: color(var(--yellow));
+	border-color: color(yellow);
 }
 .form-login input, .form-login button {
 	transition: all 0.5s ease-in-quad;
@@ -212,36 +212,36 @@ a:hover, a:focus { color: color(var(--red) tint(15%)); }
 	button: bgcolor(transparent) fgcolor(inherit) circle(1.2em);
 }
 .button-close:focus {
-	border: var(--blue) 1px solid;
+	border: blue 1px solid;
 }
 .alert-success {
-	alert: color(var(--green));
+	alert: color(green);
 	border-width: 0;
 }
 .alert-error {
-	alert: color(var(--red));
+	alert: color(red);
 	border-width: 2px;
 }
 .alert-info {
-	alert: color(var(--yellow));
+	alert: color(yellow);
 }
 
 .demo-triangle-left {
 	triangle: left;
 }
 .demo-triangle-right {
-	triangle: size(5vw) bgcolor(var(--purple)) fgcolor(var(--yellow)) right;
+	triangle: size(5vw) bgcolor(purple) fgcolor(yellow) right;
 }
 .demo-triangle-up {
-	triangle: size(2em) color(var(--green)) up;
+	triangle: size(2em) color(green) up;
 }
 .demo-triangle-down {
 	triangle: size(14px) down;
 }
 .demo-triangle-down-left {
-	triangle: down-left size(2em) color(var(--teal));
+	triangle: down-left size(2em) color(teal);
 }
 .demo-triangle-up-right {
-	triangle: up-right size(2em) color(var(--navy));
+	triangle: up-right size(2em) color(navy);
 	margin-left: -1.5em;
 }
