@@ -13,7 +13,7 @@ body {
 		width: 70%;
 	}
 }
-footer {
+body > footer {
 	color: gray;
 	margin: 3em 0;
 	font-size: 0.8em;
@@ -55,6 +55,7 @@ a:hover, a:focus { color: color(red tint(15%)); }
 	padding: 1em;
 	text-align: center;
 	flex: 1;
+	overflow: hidden;
 }
 
 .grid-demo-content {
