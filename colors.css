@@ -1,6 +1,7 @@
 /*! nextcss/colors
  * Copied from colors.css * v2.0.0
- * http://clrs.cc * @mrmrs * MIT License */
+ * http://clrs.cc * @mrmrs * MIT License
+ * + some more */
 
 :root {
 	--aqua: #7FDBFF;
@@ -20,4 +21,6 @@
 	--silver: #ddd;
 	--gray: #aaa;
 	--black: #111;
+
+	--almost-black: #3a3a3a;
 }

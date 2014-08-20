@@ -58,7 +58,7 @@ img { max-width: 100%; height: auto; }
 html {
 	hyphens: auto;
 	background: var(--white);
-	color: var(--black);
+	color: var(--almost-black);
 	line-height: 1.65;
 }
 
@@ -81,6 +81,7 @@ ul {
 }
 
 h1, h2, h3, h4, h5, h6 {
+	color: var(--black);
 	text-rendering: optimizeLegibility; /* voodoo to enable ligatures and kerning */
 	line-height: 1; /* this fixes huge spaces when a heading wraps onto two lines */
 	margin-bottom: 0;
