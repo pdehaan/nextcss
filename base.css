@@ -6,50 +6,9 @@
  *   http://getuikit.com/docs/base.html
  */
 
-@custom-media --hidpi only screen and (-webkit-min-device-pixel-ratio: 1.5),
-	only screen and (min--moz-device-pixel-ratio: 1.5),
-	only screen and (-o-min-device-pixel-ratio: 1.5/1),
-	only screen and (min-resolution: 144dpi),
-	only screen and (min-resolution: 1.5dppx);
-
-/*! Micro Clearfix http://nicolasgallagher.com/micro-clearfix-hack/ */
-%clearfix:before, %clearfix:after {
-	content: " ";
-	display: table;
+.sr-only {
+	inherit: %sr-only;
 }
-%clearfix:after {
-	clear: both;
-}
-
-/* Only for screenreaders */
-.sr-only, %sr-only {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	padding: 0px;
-	margin: -1px;
-	overflow: hidden;
-	clip: rect(0px,0px,0px,0px);
-	border: 0px none;
-}
-
-:root {
-	--tera: 6.5rem;
-	--giga: 5rem;
-	--mega: 4rem;
-	--alpha: 3.3333rem;
-	--beta: 2.6667rem;
-	--gamma: 2rem;
-	--delta: 1.3333rem;
-	--epsilon: 1.1667rem;
-	--zeta: 1rem;
-}
-
-%small-caps {
-	font-variant: small-caps;
-	text-transform: uppercase;
-}
-
 /* Yes this is 2014. Who still thinks the weird box model and overflowing images by default are good ideas?! */
 * {
 	box-sizing: border-box;
