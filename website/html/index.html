@@ -229,6 +229,87 @@
 </section>
 
 <section>
+	<h3>Media objects</h3>
+	<p>
+		Media objects are usually used for laying out things like posts and comments.
+		They can be easily nested.
+		The code is inspired by <a href="https://philipwalton.github.io/solved-by-flexbox/demos/media-object/">Solved by Flexbox</a>.
+	</p>
+	<div class="grid-codez">
+		<div><pre><code class="language-css">.feed-post {
+	inherit: %media-object;
+	margin-top: 1em;
+}
+& img {
+	max-width: 4.7em;
+	max-height: @max-width;
+}
+& a {
+	text-decoration: none;
+	font-weight: bold;
+}
+& p {
+	margin: 0.1em 0;
+}
+& time {
+	font-style: italic;
+}
+& small {
+	display: block;
+}
+</code></pre></div>
+		<div><pre><code class="language-markup">&lt;article class="feed-post"&gt;
+	&lt;figure&gt;
+		&lt;img src="https://files.app.net/2vfwvJogh.png" alt=""&gt;
+	&lt;/figure&gt;
+	&lt;section&gt;
+		&lt;a href="#"&gt;Delphine Cormier&lt;/a&gt;
+		&lt;p&gt;
+			It's really good to finally meet someone who gets it. Who gets me.
+		&lt;/p&gt;
+		&lt;small&gt;posted &lt;time&gt;yesterday at 3:14 pm&lt;/time&gt;&lt;/small&gt;
+		&lt;article class="feed-post"&gt;
+			&lt;figure&gt;
+				&lt;img src="https://files.app.net/2vfwkNBLG.png" alt=""&gt;
+			&lt;/figure&gt;
+			&lt;section&gt;
+				&lt;a href="#"&gt;Cosima Niehaus&lt;/a&gt;
+				&lt;p&gt;
+					&lt;a href="#"&gt;+Delphine Cormier&lt;/a&gt; yeah, ditto, obvs
+				&lt;/p&gt;
+				&lt;small&gt;posted &lt;time&gt;yesterday at 3:16 pm&lt;/time&gt;&lt;/small&gt;
+			&lt;/section&gt;
+		&lt;/article&gt;
+	&lt;/section&gt;
+&lt;/article&gt;</code></pre></div>
+	</div>
+	<article class="feed-post">
+		<figure>
+			<img src="https://files.app.net/2vfwvJogh.png" alt="">
+		</figure>
+		<section>
+			<a href="javascript:void(0)">Delphine Cormier</a>
+			<p>
+				It's really good to finally meet someone who gets it. Who gets me.
+			</p>
+			<small>posted <time>yesterday at 3:14 pm</time></small>
+			<article class="feed-post">
+				<figure>
+					<img src="https://files.app.net/2vfwkNBLG.png" alt="">
+				</figure>
+				<section>
+					<a href="javascript:void(0)">Cosima Niehaus</a>
+					<p>
+						<a href="javascript:void(0)">+Delphine Cormier</a> yeah, ditto, obvs
+					</p>
+					<small>posted <time>yesterday at 3:16 pm</time></small>
+				</section>
+			</article>
+		</section>
+	</article>
+</section>
+
+<section>
 	<h3>Buttons</h3>
 	<p>
 		Buttons are composed from:

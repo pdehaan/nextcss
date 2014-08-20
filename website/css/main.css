@@ -9,7 +9,7 @@ body {
 	body {
 		width: 85%;
 	}
-	p {
+	body > section > p {
 		width: 70%;
 	}
 }
@@ -99,6 +99,28 @@ a:hover, a:focus { color: color(red tint(15%)); }
 	& > * {
 		padding: 0 0.4em;
 	}
+}
+
+.feed-post {
+	inherit: %media-object;
+	margin-top: 1em;
+}
+& img {
+	max-width: 4.7em;
+	max-height: @max-width;
+}
+& a {
+	text-decoration: none;
+	font-weight: bold;
+}
+& p {
+	margin: 0.1em 0;
+}
+& time {
+	font-style: italic;
+}
+& small {
+	display: block;
 }
 
 .button-pure {
