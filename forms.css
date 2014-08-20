@@ -2,6 +2,7 @@
  * Mostly inspired by:
  *   http://purecss.io/forms/
  *   http://formalize.me/
+ *   http://getbootstrap.com/css/
  */
 
 input, select, textarea {
@@ -40,6 +41,7 @@ select {
 html input[disabled], select[disabled], select[disabled] option, select[disabled] optgroup, textarea[disabled] {
 	cursor: not-allowed;
 	user-select: none;
+	pointer-events: none;
 	background: color(var(--gray) alpha(0.25));
 }
 
