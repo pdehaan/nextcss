@@ -128,6 +128,29 @@ a:hover, a:focus { color: color(red tint(15%)); }
 	button-style: bgcolor(white) fgcolor(teal shade(30%)) borderonly;
 }
 
+.form-search label {
+	inherit: %input-addons;
+	inherit: %input-addons-rounded;
+	margin-bottom: 1em;
+}
+
+.form-password label {
+	inherit: %input-addons;
+	margin-bottom: 1em;
+}
+& input {
+	border-color: teal;
+	color: teal;
+}
+&&:focus {
+	border-color: navy;
+}
+& span {
+	border-color: teal;
+	background: teal;
+	color: white;
+}
+
 .form-comment {
 	inherit: %form-stacked;
 }
@@ -145,7 +168,7 @@ a:hover, a:focus { color: color(red tint(15%)); }
 & label {
 	color: color(teal shade(25%));
 }
-& input, & select, & textarea {
+& input, & select, & textarea, & span {
 	border-radius: 0;
 	border-width: 2px;
 	border-color: teal;
@@ -156,6 +179,13 @@ a:hover, a:focus { color: color(red tint(15%)); }
 }
 &&&:invalid {
 	border-color: color(red shade(15%));
+}
+.field-with-warning {
+	inherit: %input-addons;
+}
+& span {
+	background: teal;
+	color: white;
 }
 @media screen and (min-width: 40em) {
 	.form-feedback {

@@ -309,6 +309,54 @@
 	</form>
 
 	<p>
+		These are forms <strong>with input addons</strong> (based on <a href="https://philipwalton.github.io/solved-by-flexbox/demos/input-add-ons/">Solved by Flexbox</a>):
+	</p>
+	<pre><code class="language-css">.form-search label {
+	inherit: %input-addons;
+	inherit: %input-addons-rounded;
+}
+
+.form-password label {
+	inherit: %input-addons;
+}
+& input, & span {
+	border-color: teal;
+}
+&&:focus {
+	border-color: navy;
+}
+& span {
+	background: teal;
+	color: white;
+}</code></pre>
+	<pre><code class="language-markup">&lt;form class="form-search"&gt;
+	&lt;label&gt;
+		&lt;span&gt;Search the web&lt;/span&gt;
+		&lt;input type="search"&gt;
+		&lt;button class="button-pure"&gt;Go!&lt;/button&gt;
+	&lt;/label&gt;
+&lt;/form&gt;
+&lt;form class="form-password"&gt;
+	&lt;label&gt;
+		&lt;input type="password"&gt;
+		&lt;span&gt;Password&lt;/button&gt;
+	&lt;/label&gt;
+&lt;/form&gt;</code></pre>
+	<form class="form-search">
+		<label>
+			<span>Search the web</span>
+			<input type="search">
+			<button class="button-pure">Go!</button>
+		</label>
+	</form>
+	<form class="form-password">
+		<label>
+			<input type="password">
+			<span>Password</button>
+		</label>
+	</form>
+
+	<p>
 		This is a <strong>stacked</strong> form:
 	</p>
 	<pre><code class="language-css">.form-comment {
@@ -370,6 +418,7 @@
 	<p>
 		A style that looks cool on wide screens is <strong>aligned</strong>.
 		It uses the exact same markup as <strong>stacked</strong>, so you can use it inside of a media query!
+		This example also includes an input addon.
 		Resize your browser to see:
 	</p>
 	<pre><code class="language-css">.form-feedback {
@@ -378,7 +427,7 @@
 & label {
 	color: color(teal shade(25%));
 }
-& input, & select, & textarea {
+& input, & select, & textarea, & span {
 	border-radius: 0;
 	border-width: 2px;
 	border-color: teal;
@@ -390,6 +439,13 @@
 &&&:invalid {
 	border-color: color(red shade(15%));
 }
+.field-with-warning {
+	inherit: %input-addons;
+}
+& span {
+	background: teal;
+	color: white;
+}
 @media screen and (min-width: 40em) {
 	.form-feedback {
 		inherit: %form-aligned;
@@ -398,7 +454,10 @@
 	<pre><code class="language-markup">&lt;form class="form-feedback"&gt;
 	&lt;label&gt;
 		Your name
-		&lt;input type="text" required&gt;
+		&lt;div class="field-with-warning"&gt;
+			&lt;input type="text" required&gt;
+			&lt;span&gt;first name only&lt;/span&gt;
+		&lt;/div&gt;
 	&lt;/label&gt;
 	&lt;label&gt;
 		Feedback type
@@ -417,7 +476,10 @@
 	<form class="form-feedback">
 		<label>
 			Your name
-			<input type="text" required>
+			<div class="field-with-warning">
+				<input type="text" required>
+				<span>first name only</span>
+			</div>
 		</label>
 		<label>
 			Feedback type
