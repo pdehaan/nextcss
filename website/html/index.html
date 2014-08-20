@@ -327,7 +327,23 @@
 <section>
 	<h3>Lists</h3>
 	<p>
-		This is a normal vertical list:
+		This is an unstyled unordered list (<code>ul</code>), appropriate for text articles and such:
+	</p>
+	<ul>
+		<li>
+			First
+			<ul>
+				<li>
+					Second
+					<ul>
+						<li>Third</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+	</ul>
+	<p>
+		This is a normal vertical list of things:
 	</p>
 	<div class="grid-codez">
 		<div><pre><code class="language-css">.list-files {
@@ -335,22 +351,22 @@
 }
 & a {
 	flex: 1;
-	margin-left: 0.5em;
+	margin-left: 0.35em;
 }</code></pre></div>
 		<div><pre><code class="language-markup">&lt;ul class="list-files"&gt;
-	&lt;li&gt;&lt;i class="fa fa-file-code-o"&gt;&lt;/i&gt;&lt;a href="#"&gt;AUTOEXEC.BAT&lt;/a&gt; &lt;time&gt;a day ago&lt;/time&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;i class="fa fa-file-o     "&gt;&lt;/i&gt;&lt;a href="#"&gt;IO.SYS&lt;/a&gt;       &lt;time&gt;a day ago&lt;/time&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;i class="fa fa-file-o     "&gt;&lt;/i&gt;&lt;a href="#"&gt;COMMAND.COM&lt;/a&gt;  &lt;time&gt;a day ago&lt;/time&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;i class="fa fa-file-o     "&gt;&lt;/i&gt;&lt;a href="#"&gt;PRINTER.SYS&lt;/a&gt;  &lt;time&gt;a day ago&lt;/time&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;i class="fa fa-file-text-o"&gt;&lt;/i&gt;&lt;a href="#"&gt;DOSSHELL.INI&lt;/a&gt; &lt;time&gt;a day ago&lt;/time&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;i class="fa fa-fw fa-file-code-o"&gt;&lt;/i&gt;&lt;a href="#"&gt;AUTOEXEC.BAT&lt;/a&gt; &lt;time&gt;a day ago&lt;/time&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;i class="fa fa-fw fa-file-o     "&gt;&lt;/i&gt;&lt;a href="#"&gt;IO.SYS&lt;/a&gt;       &lt;time&gt;a day ago&lt;/time&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;i class="fa fa-fw fa-file-o     "&gt;&lt;/i&gt;&lt;a href="#"&gt;COMMAND.COM&lt;/a&gt;  &lt;time&gt;a day ago&lt;/time&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;i class="fa fa-fw fa-file-o     "&gt;&lt;/i&gt;&lt;a href="#"&gt;PRINTER.SYS&lt;/a&gt;  &lt;time&gt;a day ago&lt;/time&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;i class="fa fa-fw fa-file-text-o"&gt;&lt;/i&gt;&lt;a href="#"&gt;DOSSHELL.INI&lt;/a&gt; &lt;time&gt;a day ago&lt;/time&gt;&lt;/li&gt;
 &lt;/ul&gt;</code></pre></div>
 	</div>
 	<ul class="list-files">
-		<li><i class="fa fa-file-code-o"></i><a href="javascript:void(0)">AUTOEXEC.BAT</a> <time>a day ago</time></li>
-		<li><i class="fa fa-file-o     "></i><a href="javascript:void(0)">IO.SYS</a>       <time>a day ago</time></li>
-		<li><i class="fa fa-file-o     "></i><a href="javascript:void(0)">COMMAND.COM</a>  <time>a day ago</time></li>
-		<li><i class="fa fa-file-o     "></i><a href="javascript:void(0)">PRINTER.SYS</a>  <time>a day ago</time></li>
-		<li><i class="fa fa-file-text-o"></i><a href="javascript:void(0)">DOSSHELL.INI</a> <time>a day ago</time></li>
+		<li><i class="fa fa-fw fa-file-code-o"></i><a href="javascript:void(0)">AUTOEXEC.BAT</a> <time>a day ago</time></li>
+		<li><i class="fa fa-fw fa-file-o     "></i><a href="javascript:void(0)">IO.SYS</a>       <time>a day ago</time></li>
+		<li><i class="fa fa-fw fa-file-o     "></i><a href="javascript:void(0)">COMMAND.COM</a>  <time>a day ago</time></li>
+		<li><i class="fa fa-fw fa-file-o     "></i><a href="javascript:void(0)">PRINTER.SYS</a>  <time>a day ago</time></li>
+		<li><i class="fa fa-fw fa-file-text-o"></i><a href="javascript:void(0)">DOSSHELL.INI</a> <time>a day ago</time></li>
 	</ul>
 </section>
 

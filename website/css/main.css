@@ -130,7 +130,7 @@ a:hover, a:focus { color: color(red tint(15%)); }
 }
 & a {
 	flex: 1;
-	margin-left: 0.5em;
+	margin-left: 0.35em;
 }
 
 .button-pure {
