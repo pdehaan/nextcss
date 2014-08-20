@@ -245,3 +245,5 @@ a:hover, a:focus { color: color(red tint(15%)); }
 	triangle: up-right size(2em) color(navy);
 	margin-left: -1.5em;
 }
+
+.ob, .ob a { color: color(gray alpha(0.5)); }

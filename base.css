@@ -80,6 +80,10 @@ ul {
 	list-style-position: inside;
 }
 
+ul ul {
+	padding-left: 1em;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	color: black;
 	text-rendering: optimizeLegibility; /* voodoo to enable ligatures and kerning */

@@ -18,17 +18,39 @@
 		Your markup stays clean and semantic and it takes care of awesome responsive design.
 	</p>
 	<p>
-		It is powered by <a href="https://github.com/reworkcss/rework">Rework</a>, a JavaScript library for stylesheet manipulation.
-		<a href="http://myth.io">Myth</a> and some other useful extensions are wrapped in one single Rework plugin.
+		It is powered by <a href="https://github.com/reworkcss/rework">Rework</a>, a flexible, fast JavaScript library for stylesheet manipulation.
 	</p>
 	<p>
-		With nextcss, you can use the future CSS syntax for <a href="https://github.com/ianstormtaylor/rework-color-function">colors</a>, <a href="https://github.com/reworkcss/rework-vars">variables</a> and <a href="https://github.com/reworkcss/rework-custom-media">named media queries</a>.
-		<a href="https://github.com/klei-dev/rework-calc">calc</a> operations that can be done at compile time are calculated too.
+		More specifically, the following plugins are used:
 	</p>
+	<ul>
+		<li><a href="https://github.com/reworkcss/rework-npm">rework-npm</a> &mdash; inline <code>@import</code> that supports npm packages</li>
+		<li><a href="https://github.com/reworkcss/rework-plugin-mixin">rework-plugin-mixin</a> &mdash; mixins in JavaScript, heavily used by nextcss</li>
+		<li><a href="https://github.com/andreypopp/rework-macro">rework-macro</a> &mdash; macros, like mixins, but in CSS</li>
+		<li><a href="https://github.com/reworkcss/rework-inherit">rework-inherit</a> &mdash; selector inheritance, called <code>extend</code> in some other preprocessors</li>
+		<li><a href="https://github.com/reworkcss/rework-plugin-references">rework-plugin-references</a> &mdash; property references <code>{ height: @width }</code></li>
+		<li><a href="https://github.com/reworkcss/rework-plugin-ease">rework-plugin-ease</a> &mdash; more <a href="http://easings.net">easing functions</a></li>
+		<li><a href="https://github.com/fgnass/rework-palette">rework-palette</a> &mdash; <a href="http://clrs.cc">clrs.cc</a> colors instead of the ugly default ones</li>
+		<li><a href="https://github.com/Isquariel/rework-clone">rework-clone</a> &mdash; cloning rules <small class="ob"> because I &hearts; <a href="https://en.wikipedia.org/wiki/Orphan_Black">clones</a></small></li>
+		<li>
+			<a href="http://myth.io">Myth</a>:
+			<ul>
+				<li><a href="https://github.com/visionmedia/rework-vars">rework-vars</a> &mdash; <a href="http://dev.w3.org/csswg/css-variables/">proposed CSS variable syntax</a></li>
+				<li><a href="https://github.com/klei-dev/rework-calc">rework-calc</a> &mdash; calculating <a href="http://www.w3.org/TR/css3-values/#calc-notation">calc</a> values offline when they can be calculated offline</li>
+				<li><a href="https://github.com/reworkcss/rework-custom-media">rework-custom-media</a> &mdash; <a href="http://dev.w3.org/csswg/mediaqueries/#custom-mq">proposed CSS custom media queries syntax</a></li>
+				<li><a href="https://github.com/ianstormtaylor/rework-color-function">rework-color-function</a> &mdash; <a href="http://dev.w3.org/csswg/css-color/#modifying-colors">proposed CSS color manipulation syntax</a></li>
+				<li><a href="https://github.com/ianstormtaylor/rework-hex-alpha">rework-hex-alpha</a> &mdash; converting <a href="http://dev.w3.org/csswg/css-color/#hex-notation">new hex notation</a> to rgba for browser support</li>
+				<li><a href="https://github.com/ianstormtaylor/rework-font-variant">rework-font-variant</a> &mdash; expanding <a href="http://www.w3.org/TR/css3-fonts/#font-variant-prop">font-variant</a> for more browser support</li>
+			</ul>
+		</li>
+	</ul>
 	<p>
 		nextcss is only tested on latest versions of popular browsers.
 		No IE8-9 hacks.
 		Live in the future, where everything is <a href="http://philipwalton.github.io/solved-by-flexbox/">solved by flexbox</a>.
+	</p>
+	<p>
+		<em>You</em> should use <a href="https://github.com/postcss/autoprefixer">autoprefixer</a> after using nextcss.
 	</p>
 </section>
 
@@ -83,7 +105,7 @@
 	</p>
 	<ul>
 		<li><code>* { box-sizing: border-box }</code></li>
-		<li>images are responsive by default (<code>max-width: 100%</code>) &mdash; who ever thought overflowing by default is a good idea?!</li>
+		<li>images are responsive by default <code>{ max-width: 100% }</code> &mdash; who ever thought overflowing by default is a good idea?!</li>
 		<li><a href="http://caniuse.com/css-hyphens">hyphenation</a> is on by default (except <a href="http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation">where it shouldn't be</a>)</li>
 	</ul>
 	<p>
