@@ -107,6 +107,7 @@ a:hover, a:focus { color: color(red tint(15%)); }
 	margin-top: 1em;
 }
 & img {
+	inherit: %round;
 	max-width: 4.7em;
 	max-height: @max-width;
 }
