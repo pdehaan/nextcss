@@ -8,6 +8,7 @@
 %form-element {
 	display: inline-block;
 	padding: 0.5em 0.6em;
+	background: white;
 	border: silver 1px solid;
 	border-radius: var(--n-border-radius);
 	vertical-align: baseline;
@@ -31,11 +32,19 @@
 
 %select {
 	/* Pseudo elements on select are not possible in webkit, so no CSS triangles without non-semantic markup.
-	 * Have to use formalize's background-image :-( */
-	background-image: url(data:image/png;base64,R0lGODlhDQAEAIAAAAAAAP8A/yH5BAEHAAEALAAAAAANAAQAAAILhA+hG5jMDpxvhgIAOw==);
+	 * Have to use formalize's background image :-( */
+	background: url(data:image/png;base64,R0lGODlhDQAEAIAAAAAAAP8A/yH5BAEHAAEALAAAAAANAAQAAAILhA+hG5jMDpxvhgIAOw==);
 	background-repeat: no-repeat;
 	background-position: right center;
 	padding-right: 20px;
+}
+
+/* In Firefox desktop, the bg image is obscured by the default triangle.
+ * In Firefox mobile, both are displayed which is a mess */
+@media screen and (min--moz-device-pixel-ratio:0) {
+	%select {
+		background: white;
+	}
 }
 
 %disabled-form-element {
@@ -107,6 +116,7 @@
 %input-addons {
 	display: flex;
 	align-items: center;
+	flex-flow: row wrap;
 }
 
 %input-addons-rounded {
