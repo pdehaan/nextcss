@@ -19,14 +19,8 @@
 
 %grid-flex > * {
 	flex: 1 1 auto;
-}
-
-%grid-flex > *:first-child {
-	padding-left: 0;
-}
-
-%grid-flex > *:last-child {
-	padding-right: 0;
+	word-wrap: break-word;
+	word-break: break-all;
 }
 
 @macro gutter {

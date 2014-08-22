@@ -180,6 +180,9 @@
 	<p>
 		This module is based on <a href="http://philipwalton.github.io/solved-by-flexbox/demos/grids/">Solved by Flexbox</a>.
 	</p>
+	<p>
+		If you want to force overflowing columns into the correct size, either use <code>overflow: auto</code> or something like <code>span: 1 of 4</code>.
+	</p>
 	<div class="grid-codez">
 		<div><pre><code class="language-css">.grid-example {
 	inherit: %grid;
@@ -196,8 +199,21 @@
 	/* Spans (be more creative with the class name pls) */
 	& > .demo-two-of-three { span: 2 of 3; }
 	& > .demo-two-of-four  { span: 2 of 4; }
+	& > .demo-fourth-offset-two { span: 1 of 4 offset 2; }
 }</code></pre></div>
 		<div><pre><code class="language-markup">&lt;div class="grid-example"&gt;
+	&lt;div&gt;&lt;div class="grid-demo-content"&gt;1/2&lt;/div&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;div class="grid-demo-content"&gt;1/2&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="grid-example"&gt;
+	&lt;div class="demo-two-of-three"&gt;&lt;div class="grid-demo-content"&gt;2/3&lt;/div&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;div class="grid-demo-content"&gt;1/3&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="grid-example"&gt;
+	&lt;div&gt;&lt;div class="grid-demo-content"&gt;1/4&lt;/div&gt;&lt;/div&gt;
+	&lt;div class="demo-fourth-offset-two"&gt;&lt;div class="grid-demo-content"&gt;1/4&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="grid-example grid-example-last"&gt;
 	&lt;div class="demo-two-of-four"&gt;
 		&lt;div class="grid-demo-content"&gt;2/4&lt;/div&gt;
 		&lt;div class="grid-example"&gt;
@@ -222,6 +238,10 @@
 	<div class="grid-example">
 		<div class="demo-two-of-three"><div class="grid-demo-content">2/3</div></div>
 		<div><div class="grid-demo-content">1/3</div></div>
+	</div>
+	<div class="grid-example">
+		<div><div class="grid-demo-content">1/4</div></div>
+		<div class="demo-fourth-offset-two"><div class="grid-demo-content">1/4</div></div>
 	</div>
 	<div class="grid-example grid-example-last">
 		<div class="demo-two-of-four">

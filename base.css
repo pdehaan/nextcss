@@ -61,12 +61,12 @@ a {
 	text-decoration: underline;
 }
 
-h1 { inherit: %heading;  font-size: var(--alpha  );  margin-top: 0.9em   ; }
-h2 { inherit: %heading;  font-size: var(--beta   );  margin-top: 0.6777em; }
-h3 { inherit: %heading;  font-size: var(--gamma  );  margin-top: 0.4777em; }
-h4 { inherit: %heading;  font-size: var(--delta  );  margin-top: 0.2333em; }
-h5 { inherit: %heading;  font-size: var(--epsilon);  margin-top: 0.3999em; }
-h6 { inherit: %heading;  font-size: var(--zeta   );  margin-top: 0.6555em; }
+h1 { inherit: %heading;  font-size: var(--alpha  );  margin-top: var(--beta   ); }
+h2 { inherit: %heading;  font-size: var(--beta   );  margin-top: var(--gamma  ); }
+h3 { inherit: %heading;  font-size: var(--gamma  );  margin-top: var(--delta  ); }
+h4 { inherit: %heading;  font-size: var(--delta  );  margin-top: var(--epsilon); }
+h5 { inherit: %heading;  font-size: var(--epsilon);  margin-top: var(--zeta   ); }
+h6 { inherit: %heading;  font-size: var(--zeta   );  margin-top: var(--zeta   ); }
 
 p, ul, ol, dl, table, blockquote, form { inherit: %content; }
 ul ul { margin-top: 0; }

@@ -82,13 +82,14 @@ a:hover, a:focus { color: color(red tint(15%)); }
 	& > * { gutter: 0.6em; }
 	& > .demo-two-of-three { span: 2 of 3; }
 	& > .demo-two-of-four { span: 2 of 4; }
+	& > .demo-fourth-offset-two { span: 1 of 4 offset 2; }
 }
 .grid-example-last { padding-bottom: calc(var(--n-line-em) / 2); }
 
 .grid-codez { inherit: %grid; }
 @media screen and (min-width: 70em) {
 	.grid-codez { inherit: %grid-flex; }
-	& > * { gutter: 0.4em; }
+	& > * { gutter: 0.4em; overflow: auto; }
 }
 
 .feed-post {
