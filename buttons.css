@@ -9,7 +9,8 @@
 	width: auto;
 	border: none;
 	padding: 0.5em 1em;
-	line-height: normal;
+	margin-bottom: 0.5em;
+	line-height: var(--n-line);
 	white-space: nowrap;
 	vertical-align: baseline;
 	text-decoration: none;

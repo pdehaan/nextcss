@@ -2,8 +2,8 @@
 
 %alert-base {
 	inherit: %clearfix;
-	padding: 1.2em 2em 1.1em 1.2em;
-	margin-bottom: 1em;
+	padding: 1.6888em 2em 1.55em 1.2em;
+	margin-top: var(--n-line-em);
 	border: 1px solid;
 }
 

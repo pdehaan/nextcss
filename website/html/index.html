@@ -189,13 +189,13 @@
 @media screen and (min-width: 38em) {
 	.grid-example {
 		inherit: %grid-flex;
-		margin: 1em 0;
+		margin: 0.825em 0;
 	}
 	/* Gutters */
-	& > * { padding: 0 0.6em; }
+	& > * { gutter: 0.6em; }
 	/* Spans (be more creative with the class name pls) */
-	& > .demo-two-of-three { flex: 0 0 66.66666%; }
-	& > .demo-two-of-four { flex: 0 0 50%; }
+	& > .demo-two-of-three { span: 2 of 3; }
+	& > .demo-two-of-four  { span: 2 of 4; }
 }</code></pre></div>
 		<div><pre><code class="language-markup">&lt;div class="grid-example"&gt;
 	&lt;div class="demo-two-of-four"&gt;
@@ -252,7 +252,7 @@
 	<div class="grid-codez">
 		<div><pre><code class="language-css">.feed-post {
 	inherit: %media-object;
-	margin-top: 1em;
+	margin-top: 1.65em;
 }
 & img {
 	inherit: %round;
@@ -468,7 +468,7 @@
 	&lt;/label&gt;
 	&lt;button class="button-pure"&gt;Go!&lt;/button&gt;
 &lt;/form&gt;</code></pre>
-	<form>
+	<form class="form-web-search">
 		<label>
 			Search the web
 			<input type="search">
@@ -873,7 +873,7 @@ for (var i = 0; i &lt; trs.length; i++) {
 .demo-triangle-down-left {
 	triangle: down-left size(2em) color(teal);
 }</code></pre>
-	<p>
+	<p class="triangle-wrapper">
 		<span class="demo-triangle-left"></span>
 		<span class="demo-triangle-right"></span>
 		<span class="demo-triangle-up"></span>

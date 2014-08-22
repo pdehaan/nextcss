@@ -9,12 +9,16 @@
 }
 
 %grid > * {
-	flex: 1 100%;
+	flex: 1 1 100%;
 	max-width: 100%;
 }
 
+%grid-flex {
+	flex-flow: row nowrap;
+}
+
 %grid-flex > * {
-	flex: 1 1 0%;
+	flex: 1 1 auto;
 }
 
 %grid-flex > *:first-child {
@@ -23,4 +27,8 @@
 
 %grid-flex > *:last-child {
 	padding-right: 0;
+}
+
+@macro gutter {
+	padding: 0 $1;
 }

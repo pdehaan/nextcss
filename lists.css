@@ -1,12 +1,14 @@
 /*! nextcss/lists */
 
 %list-vertical {
+	inherit: %clearfix; /* for the last-odd-child's margin! */
 	list-style-type: none;
 }
 
 & li {
 	border-bottom: 1px solid silver;
-	padding: 0.45em 0.6em 0.4em;
+	padding: calc(var(--n-line-em) / 4) 0.6em;
+	margin-top: -1px;
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
@@ -14,4 +16,8 @@
 
 & li:last-child {
 	border-bottom: none;
+}
+
+&&:nth-child(odd) {
+	margin-bottom: calc(var(--n-line-em) / 2);
 }

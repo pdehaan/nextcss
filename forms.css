@@ -5,9 +5,20 @@
  *   http://getbootstrap.com/css/
  */
 
+%form {
+	inherit: %clearfix; /* for bottom element margin */
+}
+%form %button-base {
+	margin-bottom: 0;
+}
+%form label {
+	margin: 0.555em 0 0;
+}
+
 %form-element {
 	display: inline-block;
-	padding: 0.5em 0.6em;
+	padding: 0.65em 0.6em;
+	line-height: normal;
 	background: white;
 	border: silver 1px solid;
 	border-radius: var(--n-border-radius);
@@ -27,13 +38,13 @@
 %textarea {
 	overflow: auto; /* For certain browsers */
 	resize: vertical;
-	min-height: 5em;
+	min-height: calc(var(--n-line-em) * 3);
 }
 
 %select {
 	/* Pseudo elements on select are not possible in webkit, so no CSS triangles without non-semantic markup.
 	 * Have to use formalize's background image :-( */
-	background: url(data:image/png;base64,R0lGODlhDQAEAIAAAAAAAP8A/yH5BAEHAAEALAAAAAANAAQAAAILhA+hG5jMDpxvhgIAOw==);
+	background: url(data:image/png;base64,R0lGODlhDQAEAIAAAAAAAP8A/yH5BAEHAAEALAAAAAANAAQAAAILhA+hG5jMDpxvhgIAOw==) white;
 	background-repeat: no-repeat;
 	background-position: right center;
 	padding-right: 20px;
@@ -60,7 +71,7 @@
 }
 
 %form-grouped fieldset {
-	margin: 0 0 1em 0;
+	margin: 0 0 var(--n-line-em);
 	border: none;
 	border-radius: var(--n-border-radius);
 	padding: 0;
@@ -90,7 +101,12 @@
 
 %form-stacked label {
 	display: block;
-	margin-bottom: 0.8em;
+	margin: -2px 0 0;
+	padding: 0 0 0.7em;
+}
+
+%form-stacked > button {
+	margin: 0.7em 0;
 }
 
 %form-aligned label > * {
@@ -102,7 +118,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
-	margin-bottom: 0.8em;
+	margin: 0.825em 0 0;
+	padding: 0.2em 0;
 }
 
 %align-without-label {
@@ -111,6 +128,7 @@
 
 %form-aligned > button {
 	inherit: %align-without-label;
+	margin-top: 0.7em;
 }
 
 %input-addons {
@@ -131,7 +149,6 @@
 }
 
 %input-addons > * {
-	line-height: normal;
 	border-radius: 0;
 	position: relative;
 	left: -1px;

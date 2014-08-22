@@ -9,6 +9,7 @@
 .sr-only {
 	inherit: %sr-only;
 }
+
 /* Yes this is 2014. Who still thinks the weird box model and overflowing images by default are good ideas?! */
 * {
 	box-sizing: border-box;
@@ -25,7 +26,7 @@ html {
 	hyphens: auto;
 	background: white;
 	color: #3c3c3c;
-	line-height: 1.65;
+	line-height: var(--n-line);
 }
 
 abbr, acronym, blockquote, code, dir, kbd, listing, plaintext, q, samp, tt, var, xmp, input, button {
@@ -47,7 +48,7 @@ ul {
 	list-style-position: inside;
 }
 
-ul ul {
+& ul {
 	padding-left: 1em;
 }
 
@@ -59,27 +60,19 @@ a {
 	text-decoration: underline;
 }
 
-h1, h2, h3, h4, h5, h6 {
-	color: black;
-	text-rendering: optimizeLegibility; /* voodoo to enable ligatures and kerning */
-	line-height: 1; /* this fixes huge spaces when a heading wraps onto two lines */
-	margin-bottom: 0;
-}
+h1 { inherit: %heading;  font-size: var(--alpha  );  margin: 1em      0 0; }
+h2 { inherit: %heading;  font-size: var(--beta   );  margin: 0.8333em 0 0; }
+h3 { inherit: %heading;  font-size: var(--gamma  );  margin: 0.6777em 0 0; }
+h4 { inherit: %heading;  font-size: var(--delta  );  margin: 0.2333em 0 0; }
+h5 { inherit: %heading;  font-size: var(--epsilon);  margin: 0.3999em 0 0; }
+h6 { inherit: %heading;  font-size: var(--zeta   );  margin: 0.6555em 0 0; }
 
-& small {
-	font-size: 50%;
-	color: gray;
-}
-
-h1 { font-size: var(--alpha); }
-h2 { font-size: var(--beta); }
-h3 { font-size: var(--gamma); }
-h4 { font-size: var(--delta); }
-h5 { font-size: var(--epsilon); }
-h6 { font-size: var(--zeta); }
+%content { margin: var(--n-line-em) 0 0; }
+p, ul, ol { inherit: %content; }
+ul ul { margin-top: 0; }
 
 /* because importing nextcss/all should not add any top-level stuff, only placeholders */
-
+form { inherit: %form; }
 input, select, textarea { inherit: %form-element; }
 textarea { inherit: %textarea; }
 select { inherit: %select; }

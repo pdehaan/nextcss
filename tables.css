@@ -8,22 +8,26 @@
 	table-layout: fixed;
 }
 
-%table td, %table th {
-	padding: 0.4em;
+& td, & th {
+	padding: calc(var(--n-line-em) / 4);
+}
+
+& tr:last-child:nth-child(odd) td {
+	padding-bottom: 1.899em;
+}
+
+& thead tr {
+	background: color(gray alpha(0.15));
+}
+
+& thead th {
+	text-align: left;
+	padding-top: 1em;
+	border-bottom: color(gray alpha(0.2)) solid 3px;
 }
 
 %table-striped tr:nth-child(even) {
 	background: color(silver alpha(0.15));
-}
-
-%table thead tr {
-	background: color(gray alpha(0.15));
-}
-
-%table thead th {
-	text-align: left;
-	padding-top: 0.7em;
-	border-bottom: color(gray alpha(0.2)) solid 3px;
 }
 
 %table-collapsed, %table-collapsed thead, %table-collapsed tbody, %table-collapsed th, %table-collapsed td, %table-collapsed tr {

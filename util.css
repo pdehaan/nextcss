@@ -52,3 +52,14 @@
 %round {
 	border-radius: 999em;
 }
+
+%heading {
+	color: black;
+	text-rendering: optimizeLegibility; /* voodoo to enable ligatures and kerning */
+	line-height: 1; /* this fixes huge spaces when a heading wraps onto two lines */
+}
+
+& small {
+	font-size: 50%;
+	color: gray;
+}
