@@ -15,8 +15,8 @@
 	--tera: 6.5rem;
 	--giga: 5rem;
 	--mega: 4rem;
-	--alpha: 3.3333rem;
-	--beta: 2.6667rem;
+	--alpha: 3.1875rem;
+	--beta: 2.6875rem;
 	--gamma: 2rem;
 	--delta: 1.3333rem;
 	--epsilon: 1.1667rem;
@@ -57,9 +57,14 @@
 	color: black;
 	text-rendering: optimizeLegibility; /* voodoo to enable ligatures and kerning */
 	line-height: 1; /* this fixes huge spaces when a heading wraps onto two lines */
+	margin-bottom: calc(var(--n-line-em) / 2);
 }
 
 & small {
 	font-size: 50%;
 	color: gray;
+}
+
+%content {
+	margin: 0 0 var(--n-line-em);
 }

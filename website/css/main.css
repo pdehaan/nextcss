@@ -5,11 +5,12 @@ body {
 	margin: 0 auto;
 	font-family: Nunito, Avenir, sans-serif;
 }
-html {
+.show-rhythm {
 	background-image: linear-gradient(to bottom, #ebebeb 5%, rgba(225, 225, 225, 0) 5%);
-	background-size: 100% 26.4px;
+	background-size: 100% var(--n-line-em);
 	background-position: left top;
 }
+& pre { display: none; }
 @media screen and (min-width: 70em) {
 	body { width: 85%; }
 	& > section > p, & > section > ul { width: 70%; }
@@ -21,7 +22,7 @@ body > footer {
 }
 pre {
 	line-height: var(--n-line) !important;
-	margin: 1.5em 0 0 !important;
+	margin: 0 0 var(--n-line-em) !important;
 	padding: calc(var(--n-line-em) / 2) 0.5em !important;
 }
 pre, code {
@@ -69,7 +70,6 @@ a:hover, a:focus { color: color(red tint(15%)); }
 	text-align: center;
 	padding: calc(var(--n-line-em) / 2);
 	margin: @padding;
-	font-size: var(--delta);
 }
 .grid-example { inherit: %grid; }
 & > *                { background: color(purple tint(60%) alpha(0.4)); }
@@ -83,6 +83,7 @@ a:hover, a:focus { color: color(red tint(15%)); }
 	& > .demo-two-of-three { span: 2 of 3; }
 	& > .demo-two-of-four { span: 2 of 4; }
 }
+.grid-example-last { padding-bottom: calc(var(--n-line-em) / 2); }
 
 .grid-codez { inherit: %grid; }
 @media screen and (min-width: 70em) {
@@ -96,7 +97,7 @@ a:hover, a:focus { color: color(red tint(15%)); }
 }
 & img {
 	inherit: %round;
-	max-width: 4.7em;
+	max-width: 4em;
 	max-height: @max-width;
 }
 & a {
@@ -232,7 +233,7 @@ a:hover, a:focus { color: color(red tint(15%)); }
 	}
 }
 
-.small-forms { margin-bottom: 1.35em; }
+.small-forms { margin-bottom: calc(var(--n-line-em) / 2); }
 & form { margin: var(--n-line-em); }
 @media screen and (min-width: 43em) {
 	.small-forms {

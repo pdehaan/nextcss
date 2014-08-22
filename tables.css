@@ -13,7 +13,7 @@
 }
 
 & tr:last-child:nth-child(odd) td {
-	padding-bottom: 1.899em;
+	padding-bottom: 1.333em;
 }
 
 & thead tr {

@@ -1,8 +1,10 @@
 :root {
 	--n-border-radius: var(--border-radius, 4px);
-	--n-line: var(--line, 1.65);
-	--n-line-em: calc(var(--n-line) * 1em);
+	--n-line: var(--line, 1.5);
+	--n-line-em: calc(var(--n-line) * 1rem);
 }
+
+/* Unfortunately, line-height of 1.6 or 1.65 is rounded differently in Firefox and Chrome :-( */
 
 @import "./util";
 @import "./grids";

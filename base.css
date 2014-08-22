@@ -11,7 +11,8 @@
 }
 
 /* Yes this is 2014. Who still thinks the weird box model and overflowing images by default are good ideas?! */
-* {
+/* input[type="search"] is overriding normalize.css */
+*, input[type="search"] {
 	box-sizing: border-box;
 }
 img {
@@ -60,15 +61,14 @@ a {
 	text-decoration: underline;
 }
 
-h1 { inherit: %heading;  font-size: var(--alpha  );  margin: 1em      0 0; }
-h2 { inherit: %heading;  font-size: var(--beta   );  margin: 0.8333em 0 0; }
-h3 { inherit: %heading;  font-size: var(--gamma  );  margin: 0.6777em 0 0; }
-h4 { inherit: %heading;  font-size: var(--delta  );  margin: 0.2333em 0 0; }
-h5 { inherit: %heading;  font-size: var(--epsilon);  margin: 0.3999em 0 0; }
-h6 { inherit: %heading;  font-size: var(--zeta   );  margin: 0.6555em 0 0; }
+h1 { inherit: %heading;  font-size: var(--alpha  );  margin-top: 0.9em   ; }
+h2 { inherit: %heading;  font-size: var(--beta   );  margin-top: 0.6777em; }
+h3 { inherit: %heading;  font-size: var(--gamma  );  margin-top: 0.4777em; }
+h4 { inherit: %heading;  font-size: var(--delta  );  margin-top: 0.2333em; }
+h5 { inherit: %heading;  font-size: var(--epsilon);  margin-top: 0.3999em; }
+h6 { inherit: %heading;  font-size: var(--zeta   );  margin-top: 0.6555em; }
 
-%content { margin: var(--n-line-em) 0 0; }
-p, ul, ol { inherit: %content; }
+p, ul, ol, dl, table, blockquote, form { inherit: %content; }
 ul ul { margin-top: 0; }
 
 /* because importing nextcss/all should not add any top-level stuff, only placeholders */
