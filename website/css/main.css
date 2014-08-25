@@ -71,20 +71,37 @@ a:hover, a:focus { color: color(red tint(15%)); }
 	padding: calc(var(--n-line-em) / 2);
 	margin: @padding;
 }
-.grid-example { inherit: %grid; }
+
+.grid-example, .grid-thirds-example, .grid-fifths-example, .grid-spannable-example { inherit: %grid; margin: calc(var(--n-line-em) / 2) 0;}
 & > *                { background: color(purple tint(60%) alpha(0.4)); }
 & > *:nth-child(odd) { background: color(purple tint(60%) alpha(0.2)); }
 @media screen and (min-width: 38em) {
 	.grid-example {
 		inherit: %grid-flex;
-		margin: calc(var(--n-line-em) / 2) 0;
 	}
 	& > * { gutter: 0.6em; }
 	& > .demo-two-of-three { span: 2 of 3; }
-	& > .demo-two-of-four { span: 2 of 4; }
-	& > .demo-fourth-offset-two { span: 1 of 4 offset 2; }
 }
-.grid-example-last { padding-bottom: calc(var(--n-line-em) / 2); }
+
+.grid-thirds-example { inherit: %grid; }
+@media screen and (min-width: 38em) {
+	.grid-thirds-example { inherit: %grid-flex-3; }
+	& > * { gutter: 0.6em; }
+}
+
+.grid-spannable-example { inherit: %grid; }
+@media screen and (min-width: 38em) {
+	.grid-spannable-example { inherit: %grid-flex; }
+	& > * { gutter: 0.6em; span: 1 of 3; }
+	.demo-span-thirds { span: 2 of 3; }
+	.demo-offset-thirds { span: 1 of 3 offset 1; }
+}
+
+.grid-fifths-example { inherit: %grid; }
+@media screen and (min-width: 38em) {
+	.grid-fifths-example { inherit: %grid-flex-5; }
+	& > * { gutter: 0.6em; }
+}
 
 .grid-codez { inherit: %grid; }
 @media screen and (min-width: 70em) {
